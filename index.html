@@ -13,16 +13,18 @@
     <li>Events</li>
     <li>Travel</li>
     <li>Accomodations</li>
-    <li>Gallary</li>
-    <li>Contact</li>
+    <li>Gallery</li>
+    <li id="contact">Contact
+      <ul id="contact-drop" class="closed">
+        <li>Contact Konrad</li>
+        <li>Contact Tatiana</li>
+      </ul>
+    </li>
   </ul>
 </div>
 
-<p>
-  Under construction...
-</p>
 
-<section id="main">
+<section id="Welcome">
 
 </section>
 <!-- <div class="scrbbl-embed" data-src="/board/1824397/25385"></div>
@@ -31,5 +33,22 @@
 </body>
 
 
+<script>
 
+$(document).on("ready", function(){
+  $("#header-options").on('click', function(event){
+    if(event.target.nodeName =="LI"){
+      var $el = $(event.target)
+      if($el.hasClass('selected') || $el.attr('id') === "contact"){ return; }
+      $(event.currentTarget).find('.selected').removeClass('selected');
+      $el.addClass('selected');
+    }
+  })
+  $('#contact').on('mouseover', function(){
+    $(this).find('#contact-drop').removeClass('closed');
+  }).mouseout(function() {
+    $(this).find('#contact-drop').addClass('closed');
+  })
+})
+</script>
 </html>

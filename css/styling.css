@@ -16,11 +16,13 @@ body{
   font-size:14px;
   background-image: url("../images/background.jpg");
 }
-
 .clear-fix:after{
   content:"";
   display:block;
   clear: both;
+}
+.hide{
+  display: none !important;
 }
 
 #header-container{
@@ -57,6 +59,7 @@ body{
   padding: 5px 20px;
   letter-spacing: 3px;
   border-bottom: 1px solid white;
+  cursor: pointer;
 }
 #header-options > li:first-child{
   border-left: none;
@@ -67,4 +70,28 @@ body{
 }
 #header-options > .selected{
   text-decoration: underline;
+}
+
+#contact{
+  position:relative;
+}
+#contact-drop{
+  position: absolute;
+  width: 200px;
+  background: black;
+  top: 28px;
+  left: 0;
+}
+#contact-drop.closed{
+  display:none;
+}
+#contact-drop > li {
+  padding: 5px 20px;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
+}
+#contact-drop > li:hover {
+  color:black;
+  background:white;
 }
