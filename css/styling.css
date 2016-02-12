@@ -55,7 +55,7 @@ section{
 #header-options{
   margin-top: 10px;
   border: 1px solid white;
-  width: 759px;
+  width: 760px;
   border-bottom:none;
 }
 #header-options > li{
@@ -105,6 +105,11 @@ section{
 .center-container{
   position:absolute;
   left:350px;
+  top:100px;
+}
+#center-map{
+  position:absolute;
+  left:200px;
   top:100px;
 }
 .shadow {
