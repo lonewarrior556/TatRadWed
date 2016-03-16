@@ -32,16 +32,15 @@ section{
 .main{
   position:relative;
 }
-#main-title:hover{
+/*#main-title:hover{
   background-image: url('../images/fireworksanimation.gif');
   background-position: 100% 53%;
   transition: .5s;
-
-}
-/*#date:hover{
+}*/
+#date:hover{
   background-image: url('../images/Animated-fireworks.gif');
   background-position: 70% 11%;
-}*/
+}
 
 #header-container{
   background-color:rgba(50, 98, 149, 0.5);
@@ -64,7 +63,6 @@ section{
   width: 165px;
   padding:5px;
   font-family: 'Old Standard TT', sans-serif;
-
 }
 #header-container > *{
   margin: auto
@@ -72,7 +70,7 @@ section{
 #header-options{
   margin-top: 10px;
   border: 1px solid white;
-  width: 757.5px;
+  width: 758.5px;
 }
 #header-options > li{
   font-size:16px;
