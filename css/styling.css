@@ -56,11 +56,6 @@ section{
   transition: 2s;
   transition: opacity 2s ease 1s, width 3s ease-in, height 3s ease-in;
 }
-/*#main-title:hover{
-  background-image: url('../images/fireworksanimation.gif');
-  background-position: 100% 53%;
-  transition: .5s;
-}*/
 #date:hover{
   background-image: url('../images/Animated-fireworks.gif');
   background-position: 70% 11%;
