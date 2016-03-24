@@ -1,0 +1,58 @@
+#window-slider{
+    width: 815px;
+    height: 515px;
+    position: relative;
+    left: 50%;
+    margin-left: -410px;
+    background-color: #000;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+#tl-slider{
+    border: solid 5px white;
+    border-right: solid 2.5px white;
+    border-bottom: solid 2.5px white;
+    border-top-left-radius: 15px;
+}
+#tr-slider{
+    border: solid 5px white;
+    border-left: solid 3px white;
+    border-bottom: solid 2.5px white;
+    border-top-right-radius: 15px;
+}
+#bl-slider{
+    border: solid 5px white;
+    border-right: solid 2.5px white;
+    border-top: solid 2.5px white;
+    border-bottom-left-radius: 15px;
+}
+#br-slider{
+    border: solid 5px white;
+    border-left: solid 3px white;
+    border-top: solid 2.5px white;
+    border-bottom-right-radius: 15px;
+}
+#window-slider > div:nth-child(odd){
+    float: left;
+}
+#window-slider > div:nth-child(even){
+    float: right;
+}
+#window-slider > div{
+    position:relative;
+    width: 400px;
+    height: 250px;
+    overflow: hidden;
+}
+#window-slider > div > img{
+    position: relative;
+    width: 400px;
+    height: 250px;
+}
+#window-slider > div > img:nth-child(n+2){
+    display: none;
+}
+Status API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help
