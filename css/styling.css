@@ -76,6 +76,7 @@ section{
   padding-top: 15px;
   color:white;
   width:100%;
+  min-width: 1200px;
   border-bottom: 31px solid transparent;
   margin-bottom: 30px;
 }
