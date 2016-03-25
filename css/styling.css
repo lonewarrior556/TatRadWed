@@ -3,7 +3,7 @@ body, p, h1, h2, li{
   padding:0;
   border:0;
   color: inherit;
-  font-family: sans-serif;
+  font: inherit;
   font-size: inherit;
   background: transparent;
   display: block;
@@ -13,8 +13,10 @@ ul{
   padding: 0;
   list-style:none;
 }
+
 body{
   font-size:14px !important;
+  font-family: 'Cinzel', serif;
   background-image: url("../images/wood.jpg");
 }
 section{
@@ -66,22 +68,21 @@ section{
   padding-top: 15px;
   color:white;
   width:100%;
-  border-bottom: 28px solid transparent;
+  border-bottom: 31px solid transparent;
   margin-bottom: 30px;
 }
 #header-container > h1{
-  font-size: 40px;
+  font-size: 60px;
   font-weight: bold;
-  width: 350px;
+  width: 400px;
   padding:20px;
   padding-bottom:0;
-  font-family: 'Old Standard TT', sans-serif;
+  font-family: 'Great Vibes', cursive;
 }
 #header-container > h2{
   font-size: 20px;
-  width: 165px;
+  width: 171px;
   padding:5px;
-  font-family: 'Old Standard TT', sans-serif;
 }
 #header-container > *{
   margin: auto
@@ -89,7 +90,7 @@ section{
 #header-options{
   margin-top: 10px;
   border: 1px solid white;
-  width: 758.5px;
+  width: 860.6px;
 }
 #header-options > li{
   font-size:16px;
@@ -151,7 +152,7 @@ section{
   position: absolute;
   width: 200px;
   background: rgba(50, 98, 149, 0.5);
-  top: 28px;
+  top: 31px;
   left: 0;
 }
 #contact-drop.closed{
@@ -173,7 +174,7 @@ section{
 }
 
 .center-container{
-  width: 815px;
+  width: 860.6px;
   padding-top:100px;
   padding:50px;
   margin:auto;
@@ -200,7 +201,7 @@ section{
 
 .google-container{position:relative; width:100%; height:1500px}
 .google{position:absolute}
-.google-text{position:absolute; font-family: 'Old Standard TT', sans-serif; font-size: 40px;transition: .5s;}
+.google-text{position:absolute; font-size: 40px;transition: .5s;}
 .google1{left:100px;top:0px;color:white;}
 .google2{left:400px;top:150px;color:white;}
 .google3{left:500px;top:350px;color:white;}

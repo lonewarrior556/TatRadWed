@@ -4,7 +4,7 @@ var windowIndex = 1;
 	$.fn.windowSlider = function(params) {
     	params = $.extend({
         	startPosition:1,
-        	interval:3000,
+        	interval:2000,
         	fadeOutSpeed:400,
         	fadeInSpeed:1500,
         	cycle:'standard'

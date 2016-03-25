@@ -1,12 +1,13 @@
 <html>
 <header>
   <link rel="stylesheet" href="./css/styling.css" charset="utf-8">
-  <link href='https://fonts.googleapis.com/css?family=Old+Standard+TT:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Great+Vibes|Cinzel' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="./css/window-slider.css" charset="utf-8">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="./js/window-slider.js"></script>
 </header>
 <body>
+
 
 <div id="loading-overlay">
   <img src="./images/loading.gif" alt="" />
@@ -32,32 +33,32 @@
     <!-- <img src="./images/slideshow/File_24.jpeg"> -->
     <div id="window-slider">
             <div id="tl-slider">
-              <img src="./images/slideshow/File_1.jpeg">
-              <img src="./images/slideshow/File_7.jpeg">//
+              <img class="no-top" src="./images/slideshow/File_1.jpeg">
+              <img class="no-top" src="./images/slideshow/File_7.jpeg">
               <img src="./images/slideshow/File_3.jpeg">
               <img src="./images/slideshow/File_4.jpeg">
               <img src="./images/slideshow/File_5.jpeg">
               <img src="./images/slideshow/File_6.jpeg">
             </div>
             <div id="tr-slider">
-              <img src="./images/slideshow/File_8.jpeg">
-              <img src="./images/slideshow/File_11.jpeg">//
+              <img class="no-top" src="./images/slideshow/File_8.jpeg">
+              <img class="no-top" src="./images/slideshow/File_11.jpeg">
               <img src="./images/slideshow/File_9.jpeg">
               <img src="./images/slideshow/File_12.jpeg">
               <img src="./images/slideshow/File_13.jpeg">
               <img src="./images/slideshow/File_0.jpeg">
             </div>
             <div id="bl-slider">
-              <img src="./images/slideshow/File_15.jpeg">
-              <img src="./images/slideshow/File_14.jpeg">//
+              <img class="no-top" src="./images/slideshow/File_15.jpeg">
+              <img class="no-top" src="./images/slideshow/File_14.jpeg">
               <img src="./images/slideshow/File_16.jpeg">
               <img src="./images/slideshow/File_17.jpeg">
               <img src="./images/slideshow/File_18.jpeg">
               <img src="./images/slideshow/File_19.jpeg">
             </div>
             <div id="br-slider">
-              <img src="./images/slideshow/File_20.jpeg">
-              <img src="./images/slideshow/File_2.jpeg">//
+              <img class="no-top" src="./images/slideshow/File_20.jpeg">
+              <img class="no-top" src="./images/slideshow/File_2.jpeg">
               <img src="./images/slideshow/File_21.jpeg">
               <img src="./images/slideshow/File_22.jpeg">
               <img src="./images/slideshow/File_23.jpeg">
@@ -97,6 +98,7 @@
 </section>
 
 <section id="Accomodations" class="main start">
+  http://www.greenportonline.com/
 </section>
 
 <section id="Gallery" class="main start">
@@ -131,10 +133,12 @@ $(document).on("ready", function(){
   }).mouseout(function() {
     $(this).find('#contact-drop').addClass('closed');
   })
-  setTimeout(function(){
-    $(".start").addClass('hide');
-    $("#loading-overlay").addClass('loaded');
-  }, 1000)
+  $(window).on("load", function() {
+    setTimeout(function(){
+      $(".start").addClass('hide');
+      $("#loading-overlay").addClass('loaded');
+    }, 1000)
+  });
 })
 </script>
 </html>

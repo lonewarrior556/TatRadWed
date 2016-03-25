@@ -1,9 +1,8 @@
 #window-slider{
-    width: 815px;
+    width: 855px;
     height: 515px;
     position: relative;
-    left: 50%;
-    margin-left: -410px;
+    margin: auto;
     background-color: #000;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -42,13 +41,13 @@
 }
 #window-slider > div{
     position:relative;
-    width: 400px;
+    width: 420px;
     height: 250px;
     overflow: hidden;
 }
 #window-slider > div > img{
     position: relative;
-    width: 400px;
+    width: 420px;
     height: 250px;
 }
 #window-slider > div > img:nth-child(n+2){
