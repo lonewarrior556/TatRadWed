@@ -142,11 +142,12 @@ $(document).on("ready", function(){
   $('#window-slider').windowSlider();
   $('.basic-grey').on('click','#send-button',function(){
   //   this.value = "Sorry, this doesn't work yet!";
-    var form = $(event.currentTarget);
-    var name = form.find('#name').val();
-    var phone = form.find('#number').val();
-    var message = form.find('#message').val();
-    var person = form.find('h1').text();
+    var $button = $(event.target);
+    var $form = $(event.currentTarget);
+    var name = $form.find('#name').val();
+    var phone = $form.find('#number').val();
+    var message = $form.find('#message').val();
+    var person = $form.find('h1').text();
     $.ajax({
                 url: "http://project.konrad-dudziak.com/email_from_personal_page",
                 type: "POST",
@@ -157,7 +158,9 @@ $(document).on("ready", function(){
                     message: message
                 },
                 cache: false,
-                complete: function() { $('#send-button').attr('value',"SENT!")},
+                complete: function() {
+                  $button.attr('value',"SENT!").attr('id', 'disable-button');
+                },
             })
   })
   $("#header-options").on('click', '.section', function(event){
@@ -179,6 +182,7 @@ $(document).on("ready", function(){
       var $contact = $('#Contact');
       $contact.removeClass('hide');
       $contact.find('.basic-grey > h1').text($el.text());
+      $contact.find('#disable-button').attr('id', 'send-button');
       $contact.find('#send-button').attr('value', 'Send');
 
     }
