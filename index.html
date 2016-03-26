@@ -2,7 +2,8 @@
 <head>
   <link rel="stylesheet" href="./css/styling.css" charset="utf-8">
   <link href='https://fonts.googleapis.com/css?family=Great+Vibes|Cinzel' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="./css/window-slider.css" charset="utf-8">
+  <link rel="stylesheet" href="./css/window-slider.css" charset="utf-8" type='text/css'>
+  <link rel="stylesheet" href="./css/contact-form.css"  charset="utf-8" type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="./js/window-slider.js"></script>
 </head>
@@ -17,12 +18,12 @@
   <h1 id="main-title">Tatiana & Konrad</h1>
   <h2 id="date">October 1st 2016</h2>
   <ul id="header-options" class="clear-fix">
-    <li class="selected">Welcome</li>
-    <li>Events</li>
-    <li>Travel</li>
-    <li>Accomodations</li>
-    <li>Gallery</li>
-    <li id="contact">Contact<ul id="contact-drop" class="closed"><li>Contact Konrad</li><li>Contact Tatiana</li></ul></li>
+    <li class="section selected">Welcome</li>
+    <li class="section">Events</li>
+    <li class="section">Travel</li>
+    <li class="section">Accomodations</li>
+    <li class="section">Gallery</li>
+    <li id="contact" class="section">Contact<ul id="contact-drop" class="closed"><li>Contact Konrad</li><li>Contact Tatiana</li></ul></li>
   </ul>
 </div>
 
@@ -106,8 +107,30 @@
   <script>(function(d, s, id) {var js,ijs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//embed.scribblelive.com/widgets/embed.js";ijs.parentNode.insertBefore(js, ijs);}(document, 'script', 'scrbbl-js'));</script>
 </section>
 
+
+
 <section id="Contact" class="main start">
-  ContactContactContactContactContactContactContactContactContactContactContactContact
+  <form class="basic-grey">
+    <h1>Contact Tatiana </h1>
+    <label>
+        <span>Name! </span>
+        <input id="name" type="text" name="name" placeholder="Your Name" />
+    </label>
+
+    <label>
+        <span>Number! </span>
+        <input id="number" type="number" name="number" placeholder="Your Number" />
+    </label>
+
+    <label>
+        <span>Message! </span>
+        <textarea id="message" name="message" placeholder="Your Message!"></textarea>
+    </label>
+     <label>
+        <span>&nbsp;</span>
+        <input id="send-button" type="button" class="button" value="Send" />
+    </label>
+  </form>
 </section>
 
 </body>
@@ -117,15 +140,47 @@
 
 $(document).on("ready", function(){
   $('#window-slider').windowSlider();
-  $("#header-options").on('click', function(event){
-    if(event.target.nodeName =="LI"){
+  $('.basic-grey').on('click','#send-button',function(){
+  //   this.value = "Sorry, this doesn't work yet!";
+    var form = $(event.currentTarget);
+    var name = form.find('#name').val();
+    var phone = form.find('#number').val();
+    var message = form.find('#message').val();
+    var person = form.find('h1').text();
+    $.ajax({
+                url: "http://project.konrad-dudziak.com/email_from_personal_page",
+                type: "POST",
+                data: {
+                    name: name,
+                    phone: phone,
+                    email: person,
+                    message: message
+                },
+                cache: false,
+                complete: function() { $('#send-button').attr('value',"SENT!")},
+            })
+  })
+  $("#header-options").on('click', '.section', function(event){
       var $el = $(event.target)
       var $tabs = $(".main");
-      if($el.hasClass('selected') || $el.attr('id') === "contact"){ return; }
-      $(event.currentTarget).find('.selected').removeClass('selected');
+      if($el.hasClass('selected') || $el.attr('id') === "contact"|| $el.parents('#contact').length){ return; }
+      $(event.currentTarget.parentElement).find('.selected').removeClass('selected');
       $el.addClass('selected');
       $tabs.addClass('hide');
       $('#'+$el.text()).removeClass('hide');
+  })
+  $("#header-options").on('click', '#contact-drop', function(event){
+    if(event.target.nodeName =="LI"){
+      var $el = $(event.target)
+      var $tabs = $(".main");
+      $(event.currentTarget.parentElement.parentElement).find('.selected').removeClass('selected');
+      $el.parent().parent().addClass('selected');
+      $tabs.addClass('hide');
+      var $contact = $('#Contact');
+      $contact.removeClass('hide');
+      $contact.find('.basic-grey > h1').text($el.text());
+      $contact.find('#send-button').attr('value', 'Send');
+
     }
   })
   $('#contact').on('mouseover', function(){

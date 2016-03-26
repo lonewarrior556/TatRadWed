@@ -1,0 +1,1143 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 7]><html class="scrbbl-ie7"><![endif]-->
+<!--[if IE 8]><html class="scrbbl-ie8"><![endif]-->
+<!--[if gt IE 8]><!--><html><!--<![endif]-->
+<head>
+
+    <script type="text/javascript">var _sf_startpt = (new Date()).getTime();</script>
+   
+
+    <meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"318ad48542","applicationID":"122194","transactionName":"ZVZSMRMCVhJRVkJZDFwccTYxTFsTVVRCVRNbXVIKABFcFVVYRlwCRlYeBBITQA==","queueTime":0,"applicationTime":99,"ttGuid":"3C2EC20E6FFE5695","agent":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"VwEHU1dACQECVVhW"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(11),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,-1!==o.indexOf("dev")&&(s.dev=!0),-1!==o.indexOf("nr_dev")&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(s){try{i("ierr",[s,(new Date).getTime(),!0])}catch(c){}}return"function"==typeof f?f.apply(this,a(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(12),s=t("ee"),c=t("loader"),f=window.onerror,u=!1,d=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(5),t(4),"addEventListener"in window&&t(3),c.xhrWrappable&&t(6),u=!0)}s.on("fn-start",function(t,e,n){u&&(d+=1)}),s.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),s.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),s.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty("addEventListener");)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,["addEventListener","removeEventListener"],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(13)(a),c=t("gos");e.exports=a,o(window),"getPrototypeOf"in Object?(r(document),r(XMLHttpRequest.prototype)):XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&o(XMLHttpRequest.prototype),a.on("addEventListener-start",function(t,e){if(t[1]){var n=t[1];if("function"==typeof n){var r=c(n,"nr@wrapped",function(){return s(n,"fn-",null,n.name||"anonymous")});this.wrapped=t[1]=r}else"function"==typeof n.handleEvent&&s.inPlace(n,["handleEvent"],"fn-")}}),a.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{}],4:[function(t,e,n){var r=t("ee").get("raf"),o=t(13)(r);e.exports=r,o.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],5:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(13)(i);e.exports=i,a.inPlace(window,["setTimeout","setImmediate"],"setTimer-"),a.inPlace(window,["setInterval"],"setInterval-"),a.inPlace(window,["clearTimeout","clearImmediate"],"clearTimeout-"),i.on("setInterval-start",r),i.on("setTimer-start",o)},{}],6:[function(t,e,n){function r(t,e){e=e||this;var n=a.context(e);e.readyState>3&&!n.resolved&&(n.resolved=!0,a.emit("xhr-resolved",[],e));try{f.inPlace(e,p,"fn-",o)}catch(r){}}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").get("xhr"),s=t(3),c=t(13),f=c(a),u=c(s),d=NREUM.o,l=d.XHR,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout","onreadystatechange"];e.exports=a,window.XMLHttpRequest=function(t){var e=new l(t);try{a.emit("new-xhr",[e],e),e.hasOwnProperty("addEventListener")&&u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",r,!1)}catch(n){try{a.emit("internal-error",[n])}catch(i){}}return e},i(l,XMLHttpRequest),XMLHttpRequest.prototype=l.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{}],7:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;l>r;r++)t.removeEventListener(d[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,u.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return i(r)}function i(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}function a(t,e){var n=f(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(8),u=t("ee"),d=["load","error","abort","timeout"],l=d.length,p=t("id"),h=t(10),m=window.XMLHttpRequest;s.features.xhr=!0,t(3),t(6),u.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,h&&(h>34||10>h)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),u.on("open-xhr-start",function(t){this.params={method:t[0]},a(this,t[1]),this.metrics={}}),u.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),u.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var a=i(r);a&&(n.txSize=a)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}};for(var s=0;l>s;s++)e.addEventListener(d[s],this.listener,!1)}),u.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),u.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),u.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),u.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&u.emit("xhr-load-added",[t[1],t[2]],e)}),u.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&u.emit("xhr-load-removed",[t[1],t[2]],e)}),u.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),u.on("fn-end",function(t,e){this.xhrCbStart&&u.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],8:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],9:[function(t,e,n){function r(t,e){return function(){o(t,[(new Date).getTime()].concat(a(arguments)),null,e)}}var o=t("handle"),i=t(11),a=t(12);"undefined"==typeof window.newrelic&&(newrelic=NREUM);var s=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit"],c=["addPageAction"],f="api-";i(s,function(t,e){newrelic[e]=r(f+e,"api")}),i(c,function(t,e){newrelic[e]=r(f+e)}),e.exports=newrelic,newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),o("err",[t,(new Date).getTime()])}},{}],10:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],11:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],12:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],13:[function(t,e,n){function r(t){return!(t&&"function"==typeof t&&t.apply&&!t[a])}var o=t("ee"),i=t(12),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t){function e(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(u){d([u,"",[r,a,o],s])}f(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(l){throw f(e+"err",[r,a,l],s),l}finally{f(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,u(t,nrWrapper),nrWrapper)}function n(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function f(e,n,r){if(!c){c=!0;try{t.emit(e,n,r)}catch(o){d([o,e,n,r])}c=!1}}function u(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){d([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function d(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),e.inPlace=n,e.flag=a,e}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,a,i):i()}function n(n,r,o){t&&t(n,r,o);for(var i=e(o),a=l(n),s=a.length,c=0;s>c;c++)a[c].apply(i,r);var u=f[v[n]];return u&&u.push([y,n,r,i]),i}function d(t,e){m[t]=l(t).concat(e)}function l(t){return m[t]||[]}function p(t){return u[t]=u[t]||o(n)}function h(t,e){c(t,function(t,n){e=e||"feature",v[n]=e,e in f||(f[e]=[])})}var m={},v={},y={on:d,emit:n,get:p,listeners:l,context:e,buffer:h};return y}function i(){return new r}var a="nr@context",s=t("gos"),c=t(11),f={},u={},d=e.exports=o();d.backlog=f},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!m++){var t=h.info=NREUM.info,e=u.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){c(l,function(e,n){t[e]||(t[e]=n)});var n="https"===d.split(":")[0]||t.sslForHttp;h.proto=n?"https://":"http://",s("mark",["onload",a()],null,"api");var r=u.createElement("script");r.src=h.proto+t.agent,e.parentNode.insertBefore(r,e)}}}function o(){"complete"===u.readyState&&i()}function i(){s("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var s=t("handle"),c=t(11),f=window,u=f.document;NREUM.o={ST:setTimeout,XHR:f.XMLHttpRequest,REQ:f.Request,EV:f.Event,PR:f.Promise,MO:f.MutationObserver},t(9);var d=(""+location).split("?")[0],l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-892.min.js"},p=window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent),h=e.exports={offset:a(),origin:d,features:{},xhrWrappable:p};u.addEventListener?(u.addEventListener("DOMContentLoaded",i,!1),f.addEventListener("load",r,!1)):(u.attachEvent("onreadystatechange",o),f.attachEvent("onload",r)),s("mark",["firstbyte",a()],null,"api");var m=0},{}]},{},["loader",2,7]);</script><meta name="generator" content="ScribbleLive" />
+    
+    <link rel="apple-touch-icon" href="https://d2hlwa4qdwmewe.cloudfront.net/Images/AppleIcon.png"/>
+        
+    <link rel="icon" href="https://d2hlwa4qdwmewe.cloudfront.net/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="https://d2hlwa4qdwmewe.cloudfront.net/favicon.ico" type="image/x-icon" />
+
+
+    
+    <script src="https://d2hlwa4qdwmewe.cloudfront.net/js/Utilities.aspx?SiteId=1&v=v92.2_1.0.5918.14666&lang=en" type="text/javascript" ></script>    
+    <script type="text/javascript" src="https://d2hlwa4qdwmewe.cloudfront.net/js/handlebars-v1.3.0.js?v=v92.2_1.0.5918.14666"></script>
+ 
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/Admin.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/V2/layout.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/V2/socialsearch.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/V2/login.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/V2/postbox.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/V2/sidebar.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/V2/dashboard.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/V2/QA.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/V2/livearticle.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="Stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/content/all_events.css?v=v92.2_1.0.5918.14666" />
+    
+    <!--[if IE]>
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/IE/AdminIE.css?v=v92.2_1.0.5918.14666" />
+    <![endif]-->
+    
+    <!--[if IE 6]>
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/IE/ie6.css?v=v92.2_1.0.5918.14666" />
+    <link  rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/IE/AdminIE6.css?v=v92.2_1.0.5918.14666" />
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" media="screen" href="https://d2hlwa4qdwmewe.cloudfront.net/client/style/css/base.css?v=v92.2_1.0.5918.14666" />
+
+    
+
+	<script type="text/javascript" src="https://d2hlwa4qdwmewe.cloudfront.net/js/jquery.js?v=v92.2_1.0.5918.14666"></script>	
+    <script type="text/javascript" src="https://d2hlwa4qdwmewe.cloudfront.net/js/jqueryui.js?v=v92.2_1.0.5918.14666"></script>
+    <script type="text/javascript" src="https://d2hlwa4qdwmewe.cloudfront.net/js/Thread.aspx?SiteId=1&v=v92.2_1.0.5918.14666"></script>
+    <script src="https://d2hlwa4qdwmewe.cloudfront.net/js/SWFUpload/swfupload.js?v=v92.2_1.0.5918.14666" type="text/javascript" ></script>
+    <script type="text/javascript" src="https://d2hlwa4qdwmewe.cloudfront.net/js/jscolor/jscolor.js?v=v92.2_1.0.5918.14666"></script>
+	
+	<link rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/modules/ui/infotip/css/infotip.css?v=v92.2_1.0.5918.14666" />
+    <link rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/modules/discussion/css/scrbbl-discussion.css?v=v92.2_1.0.5918.14666" />
+		
+    <link rel="stylesheet" media="screen" type="text/css" href="https://d2hlwa4qdwmewe.cloudfront.net/Style/content/settings.css?v=v92.2_1.0.5918.14666" />
+
+    <style>
+        input.BackgroundColor {
+            background: #FFF !important;
+            color: #333 !important;
+        }
+    </style>
+
+<title>
+	Pinboard Theme Settings | ScribbleLive
+</title></head>
+<body class="is-corporate-mode en" id="page_createpinboardtemplate">
+    <script src="https://d2hlwa4qdwmewe.cloudfront.net/js/language/generator.aspx?SiteId=1&v=v92.2_1.0.5918.14666&lang=en" type="text/javascript" ></script>
+
+    <div class="scrbbl-wrap"> 
+
+        <div id="Wrapper" class="scrbbl-upper-wrap">
+
+            <div class="scrbbl-wrap-header">
+                
+
+                <div class="scrbbl-header-logo professional">
+
+                    <h1><a href="/">ScribbleLive</a></h1>
+
+                </div>
+
+                <div class="scrbbl-header-upper">
+
+                        
+
+
+	
+
+<script src="https://d2hlwa4qdwmewe.cloudfront.net/js/EventNotifications.js?v=v92.2_1.0.5918.14666"></script>
+
+
+<div class="scrbbl-header-upper-left">
+    
+        <ul class="LoggedIn">
+            <li><a href="/"><span class="item-text">Dashboard</span></a></li><li><a href="/client/Projects.aspx"><span class="item-text">Plan</span></a><div class="sub"><ul class=""><li class=" "><a href="/client/Collections.aspx"  >Collections</a></li><li class=" "><a href="/client/Projects.aspx"  >Projects</a></li><li class=" "><a href="/client/ChannelSettings.aspx"  >Settings</a></li></ul></div></li><li><a href="/client/AllContent.aspx"><span class="item-text">Create</span></a><div class="sub"><ul class=""><li class=" "><a href="/NewThread.aspx"  >New Stream</a></li><li class=" "><a href="/Event/Post.aspx"  >New Article</a></li><li class=" "><a href="/client/AllContent.aspx"  >All Content</a></li><li class=" "><a href="/client/MediaLibrary.aspx"  >Media Library</a></li><li class=" "><a href="https://market.scribblelive.com" target='_blank' >Marketplace</a></li></ul></div></li><li><a href="/client/Overview.aspx"><span class="item-text">Tracker</span></a><div class="sub"><ul class=""><li class=" "><a href="/client/Overview.aspx"  >Overview</a></li><li class=" "><a href="/client/Content_Audience.aspx?DataType=Content"  >Content</a></li></ul></div></li>
+        </ul>
+    
+</div>
+
+
+<div class="scrbbl-header-upper-right">
+
+    
+        <div class="scrbbl-header-profile">
+
+            <div class="scrbbl-header-profile-avatar">
+                <img src="https://s3.amazonaws.com/avatars.scribblelive.com/2015/9/16/2ac880c7-e3f7-4e32-aeb4-be9edb77e087.png" />
+            </div>
+            <div class="scrbbl-profile-menu">
+                <div class="scrbbl-profile-menu-upper">
+                    <div class="scrbbl-profile-avatar">
+                        <img src="https://s3.amazonaws.com/avatars.scribblelive.com/2015/9/16/2ac880c7-e3f7-4e32-aeb4-be9edb77e087.png" />
+                    </div>
+                    <span class="scrbbl-profile-name">
+                        konrad.dudziak
+                    </span>
+                    <span class='scrbbl-profile-client'>Scribble Technologies Inc.</span>
+                </div>
+                <ul class="scrbbl-profile-menu-opts">
+                    <li>
+                        <a href="/Profile.aspx">
+                            My Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/Logout.aspx">
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+
+    <ul class="scrbbl-header-support">
+        <li class="scrbbl-header-support-documentation">
+            <a href="http://help.scribblelive.com" target="_blank" title="Documentation">
+                Documentation
+            </a>
+        </li>
+        <li class="scrbbl-header-support-support">
+            <a href="/client/Support.aspx" title="Support">
+                Support
+            </a>
+        </li>
+
+        <li class=scrbbl-header-support-tools><a><span class="item-text">Tools</span></a><div class="sub"><ul class=""><li class=" "><a href="/tools/sales/users.aspx"  >Sales: Users</a></li><li class=" "><a href="/tools/marketplace/dashboard.aspx"  >Market: Dashboard</a></li><li class=" "><a href="/tools/marketplace/featuredevents.aspx"  >Market: Featured Events</a></li><li class=" "><a href="/tools/marketplace/ordercategories.aspx"  >Market: Events by Category</a></li></ul></div></li><li class=scrbbl-header-support-admin><a href="/client/Settings.aspx"><span class="item-text">Admin</span></a><div class="sub"><ul class=""><li class=" "><a href="/client/Users.aspx"  >Manage users</a></li><li class=" "><a href="/client/ActivityLog.aspx"  >Activity Log</a></li><li class=" "><a href="/client/Templates.aspx"  >Manage Templates</a></li><li class=" "><a href="/client/Icons.aspx"  >Manage Icons</a></li><li class=" "><a href="/client/Settings.aspx"  >Global settings</a></li><li class=" "><a href="/client/API.aspx"  >API</a></li></ul></div></li>
+        
+    </ul>
+
+</div>
+
+
+
+
+
+
+                    
+
+                </div>
+                <div class="scrbbl-header-lower">
+                    
+	<div id="header">
+		<h2>Pinboard Theme Settings</h2>
+		<span id="TopArea_MessageText" class="MessageText"></span>
+	</div>
+    <div class="Clear"></div>
+  
+                </div>
+
+                    
+            </div>
+
+            <div id="Container" class="scrbbl-wrap-content"> 
+                <div class="scrbbl-content-sidebar">
+                    
+    
+                </div>  
+                <div id="Content" class="scrbbl-content-main"> 
+                    
+	<form method="post" action="./CreatePinboardTemplate.aspx?PinboardThemeId=31550&amp;Id=1824397" id="SettingsForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMjA5Mzc5NjYyOQ9kFgJmD2QWBgIBD2QWBGYPZBYCAgEPZBYCAgEPDxYCHgdWaXNpYmxlZ2RkAgIPFgIfAGhkAgMPZBYCZg9kFgQCBw9kFgRmDxYCHgVjbGFzcwUIYm94LWl0ZW1kAgEPFgIfAQUPYm94LWl0ZW0gYm90dG9tZAINDw8WAh4LUG9zdEJhY2tVcmwFMi9DcmVhdGVQaW5ib2FyZFRlbXBsYXRlLmFzcHg/UGluYm9hcmRUaGVtZUlkPTMxNTUwZGQCBw9kFgICAQ8PFgIfAGhkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WBQUbY3RsMDAkQ29sdW1uMUFyZWEkTGl2ZURhdGVzBSBjdGwwMCRDb2x1bW4xQXJlYSRXaWR0aEF1dG9TY2FsZQUhY3RsMDAkQ29sdW1uMUFyZWEkSGVpZ2h0QXV0b1NjYWxlBRpjdGwwMCRDb2x1bW4xQXJlYSRQb2xsQmFycwUcY3RsMDAkQ29sdW1uMUFyZWEkUG9sbENvdW50cyMgW/v1OEeRRBMsiCjqmL76felk" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['SettingsForm'];
+if (!theForm) {
+    theForm = document.SettingsForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="https://d2hlwa4qdwmewe.cloudfront.net/WebResource.axd?d=FSUrInBWAAC9cO8U_J1t2laWZDxm_EhBChcKCB-kkVTwMP0f2ZMjWuyzlGmApVLXF3-QEARtIDWc7h4P4G-ERYsWW4E1&amp;t=635875512900000000" type="text/javascript"></script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="C3CB67BF" />
+	<input type="hidden" name="__PREVIOUSPAGE" id="__PREVIOUSPAGE" value="tV906cf3PXKz03xvd3WW7Kw5nyCT7TH7sdY3sKdnQgMrJspeLsD0Si0YzV7voQfF6NxpbPHZMtN-el7GTfLRd3thXamkrV-ByAnLS9DrWoJy2okY0" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABO5H2TX1Yrh4th8FwTKChWQSUiPBKT7Y8C10n8g3lKuaWV5fJIsvFSh+Gt5mtGYp2sB2/xRL2bz2GYtWqGfMPJicX8xZUGHOApfME6DjhMQddLHY8xY5NBs/gtWmqjD9lw4eLMzE5MeB77IsyIub/CyHNo43LqxLb5uVs+HxXm+Sr0VPxYHm7ps7ZfHjRzYJou8YGQe44Cea0Wt4UVk3D+Z6HEPV0uDg8EPNKfeaOGmRwhM/yudqKzl8sL0PhCF7MzNdxvFuL0FeWMgOue2bkU9PUak7hVgzr6amUch0bUk0JtYAUOXyLT6Bc/addGWBSsSoP7fvhacQTB6IgWDmKK6EGi/oxLXNKjDkUavSUyIoPBOP1yW1+rLbiK5eeBunLINYhxSiQN2oXE+wX9TY0of1lAZNfU9EZ44u8fQLrTQcvbHZw0=" />
+</div>	
+
+		<div id="PinboardUrl" onmouseup="return PermalinkFieldFocus(this);"></div>            
+
+		<div class="Section">
+
+			<label for="PinboardName" class="subtitle">Title</label>
+			<input name="ctl00$Column1Area$PinboardName" type="text" id="PinboardName" class="PinboardName setdefault" rel="PinboardName" value="KOnrad" />
+			
+            <div class="box-wrap" id="Style">
+                <div class="box-header">Style</div>
+
+                <div class="box-item">
+                    <label class="subtitle skin" for="Skin">Skin</label>
+			        <div class="setting-right">
+                        <select size="1" name="ctl00$Column1Area$Skin" id="Skin">
+	<option selected="selected" value="">Default</option>
+	<option value="midnight">Midnight</option>
+
+</select> 
+                    </div>
+					<div class="Clear"></div>
+                </div>
+
+                <div class="box-item post-width">
+                    <label class="subtitle tight" for="PostWidth">post width</label>
+                    <div class="setting-right">
+                        <input name="ctl00$Column1Area$PostWidth" type="text" value="333" id="Column1Area_PostWidth" class="PostWidth" />
+                        <span class="units">px</span>
+                    </div>
+					<div class="Clear"></div>
+                </div>
+
+                <div class="box-item bottom">
+                    <label class="subtitle tight" for="BackgroundColor">Background</label>
+                    <div class="input-right">
+                        <input name="ctl00$Column1Area$BackgroundColor" type="text" value="326295" id="Column1Area_BackgroundColor" class="BackgroundColor color" placeholder="Hex Value" />
+                    </div>
+					<div class="Clear"></div>
+                </div>
+                <!--
+                <div class="box-item bottom">
+                    <div id="ArtworkImageWrap">
+                        <img id="ArtworkImage" class="Empty" />
+                        <input type="submit" name="ctl00$Column1Area$EraseArtworkImage" value="Erase" onclick="ButtonBusy(this);" id="EraseArtworkImage" title="Erase" />
+                        <div style="display: none"><label id="uploadFileType">none</label></div>
+                    </div>
+                            
+                    <div id="UploadFrameLink">
+                        <a class="Button" href="#" onclick='alert("Please install Flash to upload images"); return false;' id="UploadStatus">Choose File</a>
+                        <input type="button" id="UploadCancelButton" name="UploadCancelButton" value="Cancel" onclick="UploaderAction('CancelAll');" />
+                        <div id="UploadElementContainer"><span id="SWFUploadElement"></span></div>
+                    </div>
+                </div>      -->                          
+
+            </div>
+
+            <div id="Options" class="box-wrap">
+
+	            <div class="box-header">Options</div>
+
+   	            <div class="box-item live-dates">
+		            <label class="toggle-label subtitle tight" for="LiveDates">
+			            Live Dates
+			            <span class="info-tip">
+				            More information
+				            <div class="info-box">Post dates will display as friendly text indicating how long ago the post was entered (eg. "a few seconds ago", "2 hours ago"). This friendly text will live update every minute to display the new value.</div>
+			            </span>
+		            </label>												
+		            <div class="btn-toggle-wrap right live-dates">
+			            <div class="btn-toggle-text-label left">Off</div>
+			            <div class="btn-toggle">
+				            <input name="ctl00$Column1Area$LiveDates" type="checkbox" id="LiveDates" class="btn-toggle-checkbox" checked="checked" />
+				            <label class="btn-toggle-label" for="LiveDates">
+					            <div class="btn-toggle-inner"></div>
+					            <div class="btn-toggle-switch"></div>
+				            </label>
+			            </div>
+			            <div class="btn-toggle-text-label right">on</div>
+		            </div>
+		            <div class="Clear"></div>
+	            </div>
+                <div class="box-item bottom box-item-defaultposts">
+                    <label class="subtitle tight" for="DefaultPosts">
+                        Default Number of Posts
+                        <span class="info-tip">
+                            More information
+                            <div class="info-box">The number of posts that will appear before pagination. Must be more than 4 and less than 51.</div>
+                        </span>
+                    </label>
+                    <div class="setting-right">
+                        <input name="ctl00$Column1Area$DefaultPosts" type="text" value="50" maxlength="2" id="DefaultPosts" class="DefaultPosts" value="50" />
+                    </div>
+                    <div class="Clear"></div>
+                </div>  
+
+            </div>
+
+	    </div>
+        <div class="Section Right Pinboard">
+
+			<div id="Size" class="box-wrap">
+
+				<div class="box-header">
+					Size
+					<span class="info-tip">
+						More information
+						<div class="info-box">When using this theme on an embed these size settings will be used to determine how to render the embed. If set to auto, the embed will automatically size the dimension to fit within the area and will grow with the size of the content within.</div>
+					</span>
+				</div>
+
+				<div id="WidthBox" class="box-item">
+					<label class="width-label toggle-label subtitle tight" for="Width">
+						Width
+					</label>
+					<div class="setting-right">	
+						<span class="auto-text">Auto</span>				
+						<input name="ctl00$Column1Area$Width" type="text" id="Width" class="Width setdefault" rel="Width" maxlength="4" value="500" />
+                        <span class="units">px</span>	
+					</div>
+                    <div class="btn-toggle-wrap right">
+                        <div class="btn-toggle-text-label left">Off</div>
+                        <div class="btn-toggle">
+                            <input name="ctl00$Column1Area$WidthAutoScale" type="checkbox" id="WidthAutoScale" class="btn-toggle-checkbox" checked="checked" />
+                            <label class="btn-toggle-label" for="WidthAutoScale">
+                                <div class="btn-toggle-inner"></div>
+                                <div class="btn-toggle-switch"></div>
+                            </label>
+                        </div>
+                        <div class="btn-toggle-text-label right">on</div>
+                    </div>
+					<div class="Clear"></div>
+				</div>
+
+				<div id="HeightBox" class="box-item bottom">
+					<label class="height-label toggle-label subtitle tight" for="Height">
+						Height
+					</label>
+					<div class="setting-right">	
+						<span class="auto-text">Auto</span>							
+						<input name="ctl00$Column1Area$Height" type="text" id="Height" class="Height setdefault" rel="Height" maxlength="4" value="600" />	
+                        <span class="units">px</span>
+					</div>
+                    <div class="btn-toggle-wrap right">
+                        <div class="btn-toggle-text-label left">Off</div>
+                        <div class="btn-toggle">
+                            <input name="ctl00$Column1Area$HeightAutoScale" type="checkbox" id="HeightAutoScale" class="btn-toggle-checkbox" checked="checked" />
+                            <label class="btn-toggle-label" for="HeightAutoScale">
+                                <div class="btn-toggle-inner"></div>
+                                <div class="btn-toggle-switch"></div>
+                            </label>
+                        </div>
+                        <div class="btn-toggle-text-label right">on</div>
+                    </div>                    									
+					<div class="Clear"></div>
+				</div>
+
+			</div>
+
+            <div class="box-wrap" id="Polls">
+
+				<div class="box-header">Polls</div>
+					
+				<div class="box-item">
+					<label class="toggle-label subtitle tight" for="PollBars">Display Bars</label>																		
+					<div class="btn-toggle-wrap right poll-display-bars">
+						<div class="btn-toggle-text-label left">Off</div>
+						<div class="btn-toggle">
+							<input name="ctl00$Column1Area$PollBars" type="checkbox" id="PollBars" class="btn-toggle-checkbox" checked="checked" />
+							<label class="btn-toggle-label" for="PollBars">
+								<div class="btn-toggle-inner"></div>
+								<div class="btn-toggle-switch"></div>
+							</label>
+						</div>
+						<div class="btn-toggle-text-label right">on</div>
+					</div>
+
+					<div class="Clear"></div>
+				</div>
+					
+				<div class="box-item bottom">             
+					<label class="toggle-label subtitle tight" for="PollCounts">Display Counts</label>																	
+					<div class="btn-toggle-wrap right poll-display-count">
+						<div class="btn-toggle-text-label left">Off</div>
+						<div class="btn-toggle">
+							<input name="ctl00$Column1Area$PollCounts" type="checkbox" id="PollCounts" class="btn-toggle-checkbox" checked="checked" />
+							<label class="btn-toggle-label" for="PollCounts">
+								<div class="btn-toggle-inner"></div>
+								<div class="btn-toggle-switch"></div>
+							</label>
+						</div>
+						<div class="btn-toggle-text-label right">on</div>
+					</div>
+					<div class="Clear"></div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<div class="SectionBreak"></div>
+		
+		<div class="Section">			
+
+			<label for="TopHtml" class="subtitle">Header HTML</label>
+			<textarea name="ctl00$Column1Area$TopHtml" rows="2" cols="20" id="Column1Area_TopHtml" class="TopHtml TemplateHtml">
+</textarea>
+
+	    </div>
+        <div class="Section Right">			
+
+			<label for="BottomHtml" class="subtitle">Footer HTML</label>
+			<textarea name="ctl00$Column1Area$BottomHtml" rows="2" cols="20" id="Column1Area_BottomHtml" class="BottomHtml TemplateHtml">
+</textarea>
+
+		</div>
+				
+		<div class="Section Last">
+
+			<h3>Preview</h3>
+
+			<div id="preview-wrap">
+				<iframe id="preview-iframe" name="preview"></iframe>
+				<div id="preview-markup">
+                    
+
+
+<div id="SCRBBL">
+ 
+    <div id="SCRBBL-TOOLBAR">
+	    <div id="scrbbl-header">
+	        <h1><span class="scrbbl-header-content">Stream Title</span></h1>
+			<div id="scrbbl-header-options">
+				<span class="scrbbl-header-option filters" id="scrbbl-filters">
+					<ul id="scrbbl-filters-ul">
+	                    <li><a href="#" data-posttype="*" title="All" class="scrbbl-filter-all scrbbl-filter-selected">View All</a></li>
+	                    <li><a href="#" data-posttype=".scrbbl-post-type-tweet, .scrbbl-contains-tweet" title="Twitter" class="scrbbl-filter-twitter">Tweets</a></li>
+	                    <li><a href="#" data-posttype=".scrbbl-post-type-facebook, .scrbbl-contains-facebook" title="Facebook" class="scrbbl-filter-facebook">Facebook</a></li>
+	                    <li><a href="#" data-posttype=".scrbbl-post-instagram, .scrbbl-contains-instagram" title="Instagram" class="scrbbl-filter-instagram">Instagram</a></li>
+	                    <li><a href="#" data-posttype=".scrbbl-post-type-text, .scrbbl-contains-article" title="Text/Article" class="scrbbl-filter-text">Text/Article</a></li>
+	                    <li><a href="#" data-posttype=".scrbbl-post-type-image, .scrbbl-contains-image" title="Images" class="scrbbl-filter-images">Images</a></li>
+	                    <li><a href="#" data-posttype=".scrbbl-post-type-video, .scrbbl-post-youtube, .scrbbl-contains-video" title="Video" class="scrbbl-filter-video">Video</a></li>
+	                    <li><a href="#" data-posttype=".scrbbl-post-type-audio, .scrbbl-contains-audio" title="Audio" class="scrbbl-filter-audio">Audio</a></li>
+	                    <li><a href="#" data-posttype=".scrbbl-post-type-poll, .scrbbl-contains-poll" title="Poll" class="scrbbl-filter-poll">Poll / Quiz</a></li>
+	                    <li><a href="#" data-posttype=".scrbbl-contains-original" title="Original" class="scrbbl-filter-original">Original</a></li>
+	            	</ul>			
+				</span>
+				<span class="scrbbl-header-option comment">Comment</span>	            				
+			</div><!-- scrbbl-header-options -->
+
+	    </div>
+    </div>
+
+    	<div id="SCRBBL-CONTENT">
+
+    		<ul id="scrbbl-holder-normal">
+                <li id="scrbbl-post22668485" class="scrbbl-post scrbbl-post-type-poll scrbbl-sticky" data-post-type="poll" data-postid="22668485">
+                    <div class="scrbbl-post-inner-wrap">
+					    <div class="scrbbl-post-inner">
+						    <div class="scrbbl-post-time">
+							    <span class="live-dates">a few seconds ago</span>
+							    <span class="not-live-dates">March 25 2016 8:59 PM</span>
+						    </div>
+						    <div class="scrbbl-post-content-area">
+							    <div class="scrbbl-post-poll-content" data-poll-id="3332">
+								    <p class="scrbbl-post-poll-question">What do you think of this example poll?</p>
+								    <div class="scrbbl-post-poll-answers-wrap">
+									    <div class="scrbbl-post-poll-answer scrbbl-post-poll-voted" data-answer-id="12206">
+										    <div class="scrbbl-post-poll-answer-display">
+											    <span class="scrbbl-post-poll-answer-percent">71%</span>
+										    </div>
+										    <div class="scrbbl-post-poll-answer-text">
+											    <p class="scrbbl-post-poll-text">It's really great!</p>
+											    <div class="scrbbl-post-poll-answer-bar" style="width: 100%;"></div>
+											    <div class="scrbbl-post-poll-answer-totals">71 vote(s)</div>
+										    </div>
+									    </div>
+									    <div class="scrbbl-post-poll-answer" data-answer-id="12207">
+										    <div class="scrbbl-post-poll-answer-display">
+											    <span class="scrbbl-post-poll-answer-percent">22%</span>
+										    </div>
+										    <div class="scrbbl-post-poll-answer-text">
+											    <p class="scrbbl-post-poll-text">It's good, but I think it needs more choices.</p>
+											    <div class="scrbbl-post-poll-answer-bar" style="width: 22%;"></div>
+											    <div class="scrbbl-post-poll-answer-totals">22 vote(s)</div>
+										    </div>
+									    </div>
+									    <div class="scrbbl-post-poll-answer" data-answer-id="12208">
+										    <div class="scrbbl-post-poll-answer-display">
+											    <span class="scrbbl-post-poll-answer-percent">7%</span>
+										    </div>
+										    <div class="scrbbl-post-poll-answer-text">
+											    <p class="scrbbl-post-poll-text">Yeah it's pretty ok.</p>
+											    <div class="scrbbl-post-poll-answer-bar" style="width: 7%;"></div>
+											    <div class="scrbbl-post-poll-answer-totals">7 vote(s)</div>
+										    </div>
+									    </div>
+								    </div>
+							    </div>
+						    </div>
+						    <div class="scrbbl-post-meta-area">
+							    <div class="scrbbl-post-meta-inner">
+                                    <div class="scrbbl-post-meta-large">
+								                <div class="scrbbl-post-meta-wrap-options">
+									    <div class="scrbbl-post-wrap-opts">
+										    <ul class="scrbbl-post-opts">
+											    <li class="scrbbl-post-opts-wrap-share">
+												    <span class="scrbbl-post-opts-toggle-share">
+													    <span class="scrbbl-post-opts-icon">Share</span>
+												    </span>
+                                                    <ul class="scrbbl-post-opts-share">
+                                                        <li class="scrbbl-post-opts-share-twitter" data-sharetype="post">
+                                                            <span class="scrbbl-post-opts-icon">Twitter</span>
+                                                        </li>
+                                                        <li class="scrbbl-post-opts-share-facebook" data-sharetype="post">
+                                                            <span class="scrbbl-post-opts-icon">Facebook</span>
+                                                        </li>
+                                                        <li class="scrbbl-post-opts-share-permalink">
+                                                            <a class="scrbbl-post-opts-share-permalink-link" target="_blank">
+                                                                <span class="scrbbl-post-opts-icon">Permalink</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>	
+											    </li>
+											    <li class="scrbbl-post-opts-discussions no-comments">
+												    <span class="scrbbl-post-opts-icon">Discussions</span>
+												    <span class="scrbbl-post-opts-discussions-count">&nbsp;</span>
+											    </li>
+											    <li class="scrbbl-post-opts-likes Liked" data-postid="22668485">
+												    <span class="scrbbl-post-opts-icon">Likes</span>
+												    <span class="scrbbl-post-opts-likes-count">10</span>
+											    </li>
+										    </ul>
+									    </div>
+								    </div>
+								                <div class="scrbbl-post-meta-wrap-text">
+									    <span class="scrbbl-post-meta-creator" data-creator-id="8582735">ScribbleLive</span>            
+								    </div>
+								                <div class="scrbbl-post-meta-wrap-avatar">
+									    <div class="scrbbl-post-meta-avatar"><img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-avatar.png""></div>
+								    </div>
+                                    </div>
+                                    <div class="scrbbl-post-meta-small">
+                                        <div class="scrbbl-post-meta-upper">
+								            <div class="scrbbl-post-meta-wrap-text">
+									            <span class="scrbbl-post-meta-creator" data-creator-id="8582735">ScribbleLive</span>            
+								            </div>
+								            <div class="scrbbl-post-meta-wrap-avatar">
+									            <div class="scrbbl-post-meta-avatar"><img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-avatar.png""></div>
+								        </div>
+                                        </div>
+                                        <div class="scrbbl-post-meta-lower">
+                                            <div class="scrbbl-post-meta-wrap-options">
+									            <div class="scrbbl-post-wrap-opts">
+										            <ul class="scrbbl-post-opts">
+											            <li class="scrbbl-post-opts-wrap-share">
+												            <span class="scrbbl-post-opts-toggle-share">
+													            <span class="scrbbl-post-opts-icon">Share</span>
+												            </span>	
+                                                            <ul class="scrbbl-post-opts-share">
+                                                                <li class="scrbbl-post-opts-share-twitter" data-sharetype="post">
+                                                                    <span class="scrbbl-post-opts-icon">Twitter</span>
+                                                                </li>
+                                                                <li class="scrbbl-post-opts-share-facebook" data-sharetype="post">
+                                                                    <span class="scrbbl-post-opts-icon">Facebook</span>
+                                                                </li>
+                                                                <li class="scrbbl-post-opts-share-permalink">
+                                                                    <a class="scrbbl-post-opts-share-permalink-link" target="_blank">
+                                                                        <span class="scrbbl-post-opts-icon">Permalink</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+											            </li>
+											            <li class="scrbbl-post-opts-discussions no-comments">
+												            <span class="scrbbl-post-opts-icon">Discussions</span>
+												            <span class="scrbbl-post-opts-discussions-count">&nbsp;</span>
+											            </li>
+											            <li class="scrbbl-post-opts-likes Liked" data-postid="22668485">
+												            <span class="scrbbl-post-opts-icon">Likes</span>
+												            <span class="scrbbl-post-opts-likes-count">10</span>
+											            </li>
+										            </ul>
+									            </div>
+								            </div>
+                                        </div>
+                                    </div>
+							    </div>
+						    </div>	
+					    </div>
+                    </div>
+				</li>
+				<li id="scrbbl-post22668495" class="scrbbl-tweet scrbbl-post-type-tweet scrbbl-post-comment" data-post-type="tweet" data-postid="22668495">
+                    <div class="scrbbl-post-inner-wrap">
+					<div class="scrbbl-tweet-inner">
+						<div class="scrbbl-tweet-upper">
+							<div class="scrbbl-tweet-avatar-area">
+								<a class="scrbbl-tweet-avatar" href="https://twitter.com/intent/user?screen_name=scribblelive" target="_blank">
+									<img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-avatar.png"">
+								</a>
+							</div>
+							<div class="scrbbl-tweet-content-area">
+								<a class="scrbbl-tweet-screenname" href="https://twitter.com/intent/user?screen_name=scribblelive" target="_blank">ScribbleLive</a>
+								<a class="scrbbl-tweet-twitter-logo" href="http://www.twitter.com/" target="_blank"></a>
+								<br/>
+								<a class="scrbbl-tweet-username" href="https://twitter.com/intent/user?screen_name=scribblelive" target="_blank">@scribblelive</a>
+								<br/>
+								<div class="scrbbl-tweet-content">
+									<p class="scrbbl-tweet-text">Are you a new Scribble user? Read our glossary of basic terms to help you get up-to-speed on all things real time: 
+										<a href="http://t.co/jONVXL7ZcA" title="http://ow.ly/r9Yk6" target="_blank">ow.ly/r9Yk6</a>
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="scrbbl-tweet-lower">
+							<a class="scrbbl-tweet-date" href="http://twitter.com/scribblelive/status/412299984420478976" target="_blank">Mar. 25, 2016</a>
+							<div class="scrbbl-tweet-actions">
+								<a class="scrbbl-tweet-actions-reply" onclick="return false;" href="#" target="_blank">Reply</a>
+								<a class="scrbbl-tweet-actions-retweet" onclick="return false;" href="#" target="_blank">Retweet</a>
+								<a class="scrbbl-tweet-actions-favorite" onclick="return false;" href="#" target="_blank">Favorite</a>
+							</div>
+						</div>
+					</div>
+                    </div>
+				</li>
+				<li id="scrbbl-post22668498" class="scrbbl-post scrbbl-post-type-image scrbbl-post-tight-to-edge" data-post-type="image" data-postid="22668498">
+                    <div class="scrbbl-post-inner-wrap">
+					    <div class="scrbbl-post-inner">
+						    <div class="scrbbl-post-time">
+							    <span class="live-dates">a minute ago</span>
+							    <span class="not-live-dates">March 25 2016 8:58 PM</span>
+						    </div>
+						    <div class="scrbbl-post-content-area">
+							    <div class="scrbbl-post-img-wrap">
+								    <img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-demo-image.jpg"">
+							    </div>
+
+									    <p class="scrbbl-post-caption">
+										    ScribbleLive is the leading provider of real-time engagement management solutions.
+									    </p>
+
+                                <p class="scrbbl-post-caption-below">ScribbleLive is the leading provider of real-time engagement management solutions.</p>
+						    </div>
+							<div class="scrbbl-post-meta-area">
+								<div class="scrbbl-post-meta-inner">
+                                    <span class="scrbbl-post-meta-large">
+									    <div class="scrbbl-post-meta-wrap-options">
+										<div class="scrbbl-post-wrap-opts">
+											<ul class="scrbbl-post-opts">
+												<li class="scrbbl-post-opts-wrap-share">
+													<span class="scrbbl-post-opts-toggle-share">
+														<span class="scrbbl-post-opts-icon">Share</span>
+													</span>
+                                                    <ul class="scrbbl-post-opts-share">
+                                                        <li class="scrbbl-post-opts-share-twitter" data-sharetype="post">
+                                                            <span class="scrbbl-post-opts-icon">Twitter</span>
+                                                        </li>
+                                                        <li class="scrbbl-post-opts-share-facebook" data-sharetype="post">
+                                                            <span class="scrbbl-post-opts-icon">Facebook</span>
+                                                        </li>
+                                                        <li class="scrbbl-post-opts-share-permalink">
+                                                            <a class="scrbbl-post-opts-share-permalink-link" target="_blank">
+                                                                <span class="scrbbl-post-opts-icon">Permalink</span>
+                                                            </a>
+                                                        </li>
+                                                    </ul>	
+												</li>
+												<li class="scrbbl-post-opts-discussions">
+													<span class="scrbbl-post-opts-icon">Discussions</span>
+													<span class="scrbbl-post-opts-discussions-count">1</span>
+												</li>
+												<li class="scrbbl-post-opts-likes" data-postid="22668498">
+													<span class="scrbbl-post-opts-icon">Likes</span>
+													<span class="scrbbl-post-opts-likes-count">5</span>
+												</li>
+											</ul>
+										</div>
+									</div>
+								    	<div class="scrbbl-post-meta-wrap-text">
+										<span class="scrbbl-post-meta-creator" data-creator-id="8582735">ScribbleLive</span>            
+									</div>
+									    <div class="scrbbl-post-meta-wrap-avatar">
+										<div class="scrbbl-post-meta-avatar">
+											<img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-avatar.png"">
+										</div>
+									</div>
+                                    </span>
+                                    <span class="scrbbl-post-meta-small">
+                                        <div class="scrbbl-post-meta-upper">
+                                            <div class="scrbbl-post-meta-wrap-text">
+										        <span class="scrbbl-post-meta-creator" data-creator-id="8582735">ScribbleLive</span>            
+									        </div>
+									        <div class="scrbbl-post-meta-wrap-avatar">
+										        <div class="scrbbl-post-meta-avatar">
+											        <img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-avatar.png"">
+										        </div>
+									        </div>
+                                        </div>
+                                        <div class="scrbbl-post-meta-lower">
+									        <div class="scrbbl-post-meta-wrap-options">
+										        <div class="scrbbl-post-wrap-opts">
+											        <ul class="scrbbl-post-opts">
+												        <li class="scrbbl-post-opts-wrap-share">
+													        <span class="scrbbl-post-opts-toggle-share">
+														        <span class="scrbbl-post-opts-icon">Share</span>
+													        </span>
+                                                            <ul class="scrbbl-post-opts-share">
+                                                                <li class="scrbbl-post-opts-share-twitter" data-sharetype="post">
+                                                                    <span class="scrbbl-post-opts-icon">Twitter</span>
+                                                                </li>
+                                                                <li class="scrbbl-post-opts-share-facebook" data-sharetype="post">
+                                                                    <span class="scrbbl-post-opts-icon">Facebook</span>
+                                                                </li>
+                                                                <li class="scrbbl-post-opts-share-permalink">
+                                                                    <a class="scrbbl-post-opts-share-permalink-link" target="_blank">
+                                                                        <span class="scrbbl-post-opts-icon">Permalink</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+												        </li>
+												        <li class="scrbbl-post-opts-discussions">
+													        <span class="scrbbl-post-opts-icon">Discussions</span>
+													        <span class="scrbbl-post-opts-discussions-count">1</span>
+												        </li>
+												        <li class="scrbbl-post-opts-likes" data-postid="22668498">
+													        <span class="scrbbl-post-opts-icon">Likes</span>
+													        <span class="scrbbl-post-opts-likes-count">5</span>
+												        </li>
+											        </ul>
+										        </div>
+									        </div>
+                                        </div>
+                                    </span>
+								</div>
+							</div>
+					    </div>
+					    <div class="discussion-wrap">
+						    <ul class="comments">
+							    <li>
+								    <div class="media comment" data-commentid="60" data-uid="8582735">
+									    <div class="img"><img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-avatar.png" height="30" width="30"></div>
+									    <div class="bd">
+										    <em class="commenter">ScribbleLive</em>
+										    <p>I really like this photo.</p>
+										    <p class="meta"><span class="DisplayPostTime">March 25 2016 8:59 PM</span></p>
+									    </div>
+								    </div>
+							    </li>
+						    </ul>
+						    <div class="media make-a-comment">
+							    <div class="bd">
+								    <div class="comment-input">
+									    <input maxlength="500" type="text" name="" value="" disabled="disabled" placeholder="Make a comment...">
+								    </div>
+							    </div>
+						    </div>
+					    </div>
+                    </div>
+				</li>
+                <li id="scrbbl-post22675516" class="scrbbl-post scrbbl-post-type-image scrbbl-post-tight-to-edge scrbbl-post-instagram" data-post-type="image" data-postid="22675516" >
+                    <div class="scrbbl-post-inner-wrap">
+                        <div class="scrbbl-post-inner">
+                            <div class="scrbbl-post-time">
+                    	        <span class="live-dates">a minute ago</span>
+						        <span class="not-live-dates">March 25 2016 8:58 PM</span>
+                            </div>
+                            <div class="scrbbl-post-content-area">
+                                <div class="scrbbl-post-img-wrap">
+                                    <img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-demo-image-2.jpg">
+                                </div>
+                                
+                                        <p class="scrbbl-post-caption">
+                                                Isn't that sweet? #twitter #scribblelive
+                                        </p>
+    
+                                <p class="scrbbl-post-caption-below">Isn't that sweet? #twitter #scribblelive</p>
+                            </div>
+                            <div class="scrbbl-post-meta-area">
+                                <div class="scrbbl-post-meta-inner">
+                                    <span class="scrbbl-post-meta-large">
+                                        <div class="scrbbl-post-meta-wrap-options">
+                                            <div class="scrbbl-post-wrap-opts">
+                                                <ul class="scrbbl-post-opts">
+                                                    <li class="scrbbl-post-opts-wrap-share">
+                                                        <span class="scrbbl-post-opts-toggle-share">
+                                                            <span class="scrbbl-post-opts-icon">Share</span>
+                                                        </span>
+                                                        <ul class="scrbbl-post-opts-share">
+                                                            <li class="scrbbl-post-opts-share-twitter" data-sharetype="post">
+                                                                <span class="scrbbl-post-opts-icon">Twitter</span>
+                                                            </li>
+                                                            <li class="scrbbl-post-opts-share-facebook" data-sharetype="post">
+                                                                <span class="scrbbl-post-opts-icon">Facebook</span>
+                                                            </li>
+                                                            <li class="scrbbl-post-opts-share-permalink">
+                                                                <a class="scrbbl-post-opts-share-permalink-link" target="_blank">
+                                                                    <span class="scrbbl-post-opts-icon">Permalink</span>
+                                                                </a>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                    <li class="scrbbl-post-opts-discussions no-comments">
+                                                        <span class="scrbbl-post-opts-icon">Discussions</span>
+                                                        <span class="scrbbl-post-opts-discussions-count">&nbsp;</span>
+                                                    </li>
+                                                    <li class="scrbbl-post-opts-likes" data-postid="22675516">
+                                                        <span class="scrbbl-post-opts-icon">Likes</span>
+                                                        <span class="scrbbl-post-opts-likes-count">0</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="scrbbl-post-meta-wrap-text">
+                                            <span class="scrbbl-post-meta-creator" data-creator-id="11130203">scribblelive</span> 
+                                            <span class="scrbbl-post-meta-source">via 
+                                                <a href="http://instagram.com/p/gtTe-7G41l/" class="sl_instagram_post" target="_blank">Instagram</a> 
+                                            </span>
+                                        </div>
+                                        <div class="scrbbl-post-meta-wrap-avatar">
+                                            <div class="scrbbl-post-meta-avatar">
+                                                <img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-avatar.png">
+                                            </div>
+                                        </div>
+                                    </span>
+                                    <span class="scrbbl-post-meta-small">
+                                        <div class="scrbbl-post-meta-upper">
+                                            <div class="scrbbl-post-meta-wrap-text">
+                                                <span class="scrbbl-post-meta-creator" data-creator-id="11130203">scribblelive</span> 
+                                                <span class="scrbbl-post-meta-source">via 
+                                                    <a href="http://instagram.com/p/gtTe-7G41l/" class="sl_instagram_post" target="_blank">Instagram</a> 
+                                                </span>
+                                            </div>
+                                            <div class="scrbbl-post-meta-wrap-avatar">
+                                                <div class="scrbbl-post-meta-avatar">
+                                                    <img src="https://d2hlwa4qdwmewe.cloudfront.net/Images/scrbbl-avatar.png">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="scrbbl-post-meta-lower">
+                                            <div class="scrbbl-post-meta-wrap-options">
+                                                <div class="scrbbl-post-wrap-opts">
+                                                    <ul class="scrbbl-post-opts">
+                                                        <li class="scrbbl-post-opts-wrap-share">
+                                                            <span class="scrbbl-post-opts-toggle-share">
+                                                                <span class="scrbbl-post-opts-icon">Share</span>
+                                                            </span>
+                                                            <ul class="scrbbl-post-opts-share">
+                                                                <li class="scrbbl-post-opts-share-twitter" data-sharetype="post">
+                                                                    <span class="scrbbl-post-opts-icon">Twitter</span>
+                                                                </li>
+                                                                <li class="scrbbl-post-opts-share-facebook" data-sharetype="post">
+                                                                    <span class="scrbbl-post-opts-icon">Facebook</span>
+                                                                </li>
+                                                                <li class="scrbbl-post-opts-share-permalink">
+                                                                    <a class="scrbbl-post-opts-share-permalink-link" target="_blank">
+                                                                        <span class="scrbbl-post-opts-icon">Permalink</span>
+                                                                    </a>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li class="scrbbl-post-opts-discussions no-comments">
+                                                            <span class="scrbbl-post-opts-icon">Discussions</span>
+                                                            <span class="scrbbl-post-opts-discussions-count">&nbsp;</span>
+                                                        </li>
+                                                        <li class="scrbbl-post-opts-likes" data-postid="22675516">
+                                                            <span class="scrbbl-post-opts-icon">Likes</span>
+                                                            <span class="scrbbl-post-opts-likes-count">0</span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>                                   
+                                        </div>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+			</ul>
+		</div>
+	
+</div>
+
+<script type="text/javascript" src="https://d2hlwa4qdwmewe.cloudfront.net/liveblog/display/pinboard/js/jquery.isotope.js"></script>                
+
+				</div>
+			</div>
+
+		</div>
+			
+		<div class="SectionBreak"></div>
+		
+		<input type="submit" name="ctl00$Column1Area$SaveButton" value="Save" onclick="javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions(&quot;ctl00$Column1Area$SaveButton&quot;, &quot;&quot;, false, &quot;&quot;, &quot;/CreatePinboardTemplate.aspx?PinboardThemeId=31550&quot;, false, false))" id="SaveButton" class="scrbbl-btn Button btn-right" />
+        
+        <input type="submit" name="ctl00$Column1Area$BackButton" value="Back" onclick="ButtonBusy(this);" id="Column1Area_BackButton" class="scrbbl-btn Button" />
+
+	</form>
+
+    <script type="text/javascript" src="https://d2hlwa4qdwmewe.cloudfront.net/modules/ui/infotip/js/infotip.js?v=v92.2_1.0.5918.14666"></script>
+    <script type="text/javascript" src="https://d2hlwa4qdwmewe.cloudfront.net/js/content/pinboard_settings.js?v=v92.2_1.0.5918.14666"></script>
+
+    <script type="text/javascript" >
+        jQuerySL(document).ready(function () {
+
+            SCRIBBLE.ui.InfoTip.init({ autoAdjust: true });
+
+            //SetupSWFUploaderNoEvent();
+
+            new SCRIBBLE.content.PinboardSettings({
+                lang: {
+                    'Event Title': 'Stream Title',
+                    'Description': 'A description of the stream.'
+                }
+            });
+
+            jQuerySL('.MessageText').fadeIn('slow').delay(4000).fadeOut('slow');
+        })
+    </script>
+
+       
+                </div>
+            </div>  
+
+            <div class="scrbbl-wrap-bottom">
+                
+
+            </div>
+
+        </div>
+
+        <div class="scrbbl-wrap-footer">
+            <div class="scrbbl-footer-upper">
+                <div class="scrbbl-footer-menu">
+                    <ul>
+                        <li><a href="http://www.scribblelive.com/about/">About</a></li>
+                        <li><a href="http://www.scribblelive.com/about/careers/">Careers</a></li>
+                        <li><a href="http://www.scribblelive.com/customers/">Customers</a></li>
+                        <li><a href="http://www.scribblelive.com/about/media/">Media</a></li>
+                        <li><a href="http://www.scribblelive.com/legal/">Legal</a></li>
+                        <li><a href="http://www.scribblelive.com/support/">Support</a></li>
+                        <li><a href="http://www.scribblelive.com/contact/">Contact</a></li>
+                    </ul>               
+                </div>
+                <div class="scrbbl-footer-social-box">
+                    <ul class="scrbbl-footer-social-networks">
+                        <li class="twitter" title="Twitter"><a href="http://www.twitter.com/scribblelive" target="_blank">Twitter</a></li>
+                        <li class="facebook" title="Facebook"><a href="http://www.facebook.com/ScribbleLive" target="_blank">Facebook</a></li>
+                        <li class="linkedin" title="LinkedIn"><a href="http://www.linkedin.com/company/scribblelive" target="_blank">LinkedIn</a></li>
+                        <li class="instagram" title="Instagram"><a href="http://instagram.com/scribblelive" target="_blank">Instagram</a></li>
+                        <li class="google-plus" title="Google+"><a href="https://plus.google.com/116002907119018084277" target="_blank">Google+</a></li>
+                        <li class="youtube" title="YouTube"><a href="http://www.youtube.com/user/ScribbleTechnologies" target="_blank">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="scrbbl-footer-lower">       
+                <div class="scrbbl-footer-copyright"> 
+                    <p>Copyright &copy; 2016 Scribble Technologies Inc. - All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script type="text/x-handlebars-template" id="notification-template">
+        <div class="notification-box">
+            <span class="notification-box-icon"></span>
+            <span class="notification-box-message"></span>
+        </div>
+    </script>
+    
+    
+
+<script id="IntercomSettingsScriptTag">
+    var intercomSettings = {
+        app_id: 'ctbemb26',
+        email: "konrad.dudziak@scribblelive.com",
+        created_at: 1438802254,
+        name:"konrad.dudziak",
+        company: {
+id: '670',
+name: "Scribble Technologies Inc.",
+created_at: '1283904000',
+plan: 'Enterprise'
+},
+
+        custom_data: {
+            'client': "Scribble Technologies Inc.",
+            'plan': "Enterprise",
+            'language': 'English (United States)',
+            'permissions': 'Administrator',
+            'edition': 'Professional'
+        }
+
+        
+
+        , "user_hash": "a4063beaee0c2496164d6002e67e8b3cfeba479e769235721ab7a3b8bf082806"
+
+        
+    };
+</script>
+<script>
+    (function () {
+        function async_load() {
+            var s = document.createElement('script');
+            s.type = 'text/javascript'; s.async = true;
+            s.src = 'https://api.intercom.io/api/js/library.js';
+            var x = document.getElementsByTagName('script')[0];
+            x.parentNode.insertBefore(s, x);
+        }
+        if (window.attachEvent) {
+            window.attachEvent('onload', async_load);
+        } else {
+            window.addEventListener('load', async_load, false);
+        }
+    })();
+</script>
+
+
+    
+    <script>
+        (function () { var w = window; var ic = w.Intercom; if (typeof ic === "function") { ic('reattach_activator'); ic('update', intercomSettings); } else { var d = document; var i = function () { i.c(arguments) }; i.q = []; i.c = function (args) { i.q.push(args) }; w.Intercom = i; function l() { var s = d.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = 'https://static.intercomcdn.com/intercom.v1.js'; var x = d.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x); } if (w.attachEvent) { w.attachEvent('onload', l); } else { w.addEventListener('load', l, false); } } })()
+    </script>
+
+     
+
+<script type="text/javascript">
+    var MixPanelKey = 'cf6d9a3a862b7601189f7c970a2d095f';
+    var UseMixPanel = 'false'.toLowerCase() === 'true';
+</script>
+
+
+    <script src="https://d2hlwa4qdwmewe.cloudfront.net/js/Metrics.js?v=v92.2_1.0.5918.14666" type="text/javascript" ></script>
+
+
+    <script type="text/javascript">
+        var $M;
+
+        SCRIBBLE.namespace('globals').IsEnterprise = false;
+
+        jQuerySL(document).ready(function () {
+
+            if (typeof SCRIBBLE.metrics !== 'undefined') {
+                $M = SCRIBBLE.metrics.Lib;
+            }
+
+            
+
+            // mixpanel tracking
+            var settings = { "Page Name": window.document.title, "URL": window.location.pathname };
+            $M.Track("Page View", settings);
+        });
+
+    </script>
+
+    
+
+
+    
+
+<!-- ScribbleLive Site Metrics -->
+<script type="text/javascript">
+    var IsGAInstalled = false;
+    try
+    {
+        if (gaJsHost != null)
+        {
+            IsGAInstalled = true;
+        }
+    }
+    catch (Error)
+    {
+    }
+
+    if (!IsGAInstalled)
+    {
+        gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        (function ()
+        {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = gaJsHost + 'google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    }
+</script>
+
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-289507-7']);
+    _gaq.push(['_trackPageview']);
+</script>
+
+
+
+
+    <script type="text/javascript">
+        var $M;
+        if( typeof SCRIBBLE.metrics !== 'undefined') {
+            $M = SCRIBBLE.metrics.Lib;
+            $M.UserId = "44588037";
+            $M.UserName = "konrad.dudziak@scribblelive.com";
+            $M.Name = "konrad.dudziak";
+            $M.AvatarUrl = "https://s3.amazonaws.com/avatars.scribblelive.com/2015/9/16/2ac880c7-e3f7-4e32-aeb4-be9edb77e087.png";
+            $M.DefaultAvatarUrl = "http://avatars.scribblelive.com/default.png";
+            $M.UserType = "Administrator";
+            $M.Client = "Scribble Technologies Inc. (670)";
+            $M.IsEnterpriseClient = false;
+            $M.Website = "ScribbleLive";
+            $M.Language = "en";
+        
+            (function (jQuerySL) {
+             jQuerySL(document).ready(function(){
+                // removed all old mix panel tracking, leaving this in case it's needed
+            });
+            } ( typeof jQuerySL !== "undefined" ? jQuerySL : jQuery ));
+        
+        }
+    </script>
+
+
+
+
+    
+
+    
+
+   
+
+</body>
+</html>
