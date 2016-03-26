@@ -184,6 +184,9 @@ $(document).on("ready", function(){
       $contact.find('.basic-grey > h1').text($el.text());
       $contact.find('#disable-button').attr('id', 'send-button');
       $contact.find('#send-button').attr('value', 'Send');
+      $contact.find('#name').val("");
+      $contact.find('#number').val("");
+      $contact.find('#message').val("");
 
     }
   })
