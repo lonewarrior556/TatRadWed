@@ -205,6 +205,9 @@ $(document).on("ready", function(){
     setTimeout(function(){
       $(".start").addClass('hide');
       $("#loading-overlay").addClass('loaded');
+      var width = [].slice.apply( $('#header-options > li').map(function(){return this.offsetWidth})).reduce(function(a,b){return a+b});
+      console.log(width)
+      $('#header-options').css('width', width+'px');
       setTimeout(function(){ $("body").removeClass('loading'); },2500 )
     }, 1000)
   });

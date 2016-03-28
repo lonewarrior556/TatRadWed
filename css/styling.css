@@ -83,14 +83,14 @@ section{
 #header-container > h1{
   font-size: 60px;
   font-weight: bold;
-  width: 400px;
+  width: 420px;
   padding:20px;
   padding-bottom:0;
   font-family: 'Great Vibes', cursive;
 }
 #header-container > h2{
   font-size: 20px;
-  width: 171px;
+  width: 180px;
   padding:5px;
 }
 #header-container > *{
@@ -99,7 +99,8 @@ section{
 #header-options{
   margin-top: 10px;
   border: 1px solid white;
-  width: 860.6px;
+  /*width: 860.6px;*/
+  /*max-width: 870px;*/
 }
 #header-options > li{
   font-size:16px;
