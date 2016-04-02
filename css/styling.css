@@ -188,6 +188,7 @@ section{
   padding-top:100px;
   padding:50px;
   margin:auto;
+  overflow: hidden;
 
 }
 #center-map{
@@ -314,3 +315,19 @@ section{
     font-weight: bold;
 }
 /*Accomodations-end*/
+
+/*Trevel*/
+#jitney {
+  width: 1050px;
+  height: 162px;
+  vertical-align: middle;
+  border-top-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 0px;
+  border-left-width: 0px;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+}
+/*Travel-End*/
