@@ -207,15 +207,110 @@ section{
   position: relative;
 }
 
-
-
 .google-container{position:relative; width:100%; height:1500px}
 .google{position:absolute}
 .google-text{position:absolute; font-size: 40px;transition: .5s;}
-.google1{left:100px;top:0px;color:white;}
-.google2{left:400px;top:150px;color:white;}
-.google3{left:500px;top:350px;color:white;}
-.google4{left:100px;top:700px;color:white;}
-.ferry-text{left:550;top:100px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
-.church-text{left:200;top:500px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
-.reception-text{left:600px;top:800px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
+.google1{left:150px;top:0px;color:white;}
+.google2{left:600px;top:350px;color:white;}
+.google3{left:150px;top:700px;color:white;}
+.google4{left:600px;top:1050px;color:white;}
+.text-1{left:650px;top:100px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
+.text-2{left:200px;top:450px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
+.text-3{left:650px;top:800px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
+.text-4{left:200px;top:1150px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
+
+/*Accomodations*/
+  #lodging-container{
+    background-color: rgba(255,255,255,.9);
+  }
+  [class*=sqs-col] .sqs-block {
+      padding-left: 17px;
+      padding-right: 17px;
+  }
+  .sqs-block {
+      padding-bottom: 5px;
+      padding-top: 5px;
+  }
+  .sqs-block-html {
+      clear: none;
+  }
+  .sqs-block {
+      position: relative;
+      height: auto;
+      outline: 1px solid transparent;
+      -webkit-transition: box-shadow .1s ease-in-out;
+      -moz-transition: box-shadow .1s ease-in-out;
+      -ms-transition: box-shadow .1s ease-in-out;
+      -o-transition: box-shadow .1s ease-in-out;
+      transition: box-shadow .1s ease-in-out;
+      padding-top: 17px;
+      padding-bottom: 17px;
+  }
+  [class*=sqs-col]:last-child {
+      padding-right: 0;
+  }
+  .sqs-col-12 {
+      width: 100%;
+  }
+  [class*=sqs-col] {
+      float: left;
+  }
+
+  .sqs-block-html .sqs-block-content>*:first-child {
+      margin-top: 0;
+  }
+  #lodging-container h2:first-child, #lodging-container h1:first-child, #lodging-container .entry-title:first-child {
+      margin-top: 0;
+  }
+
+  #lodging-container h2 .entry-title {
+      margin: 1em 0 .5em;
+  }
+  #lodging-container h2, #lodging-container .summary-title a {
+      color: #4a4a4a;
+  }
+  #lodging-container h2 {
+      font-family: "proxima-nova";
+      font-size: 22px;
+      line-height: 1.2em;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 400;
+      font-style: normal;
+  }
+  #lodging-container h2 {
+      text-rendering: optimizeLegibility;
+  }
+
+  .sqs-block-html .sqs-block-content>*:first-child {
+    margin-top: 0;
+}
+
+#lodging-container h1, .entry-title {
+    margin: 1em 0 .5em;
+}
+#lodging-container h1, .entry-title {
+    color: #3d9991;
+}
+#lodging-container h1, .entry-title {
+    font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 48px;
+    font-family: "adobe-garamond-pro";
+    font-size: 45px;
+    line-height: 1.2em;
+    text-transform: none;
+    letter-spacing: 0px;
+    font-weight: 400;
+    font-style: normal;
+}
+#lodging-container h1 {
+    display: block;
+    font-size: 3em;
+    margin: .67em 0;
+    -webkit-margin-before: 0.67em;
+    -webkit-margin-after: 0.67em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+/*Accomodations-end*/
