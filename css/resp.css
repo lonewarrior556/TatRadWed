@@ -1,0 +1,15 @@
+@media (max-width: 850px) {
+  section, body, #header-container{
+    width:850px;
+  }
+  .center-container{
+    padding-left:0px;
+    padding-right:0px
+  }
+  .google1, .google3, .text-2, .text-4{
+    left:10px;
+  }
+  .text-1, .text-3, .google2, .google4{
+    left: 400px;
+  }
+}
