@@ -99,9 +99,9 @@ section{
 #header-options{
   margin-top: 10px;
   border: 1px solid white;
-  /*width: 860.6px;*/
-  /*max-width: 870px;*/
+  display: inline-block;
 }
+
 #header-options > li{
   font-size:16px;
   float:left;
