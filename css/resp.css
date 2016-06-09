@@ -18,6 +18,9 @@
   #header-options > li {
     width:95%;
     border:0;
+    height: 32px;
+    font-size: 20px;
+    border-bottom: 1px solid white;
   }
   .main{
     padding-top: 375px;
