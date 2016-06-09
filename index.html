@@ -2,7 +2,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=850, initial-scale=1">
-
+  <script>    window.scrollTo(0,0);    </script>
   <!-- <link rel="stylesheet" type="text/css" href="./css/reset.css"> -->
   <link rel="stylesheet" href="./css/styling.css" charset="utf-8">
   <link href='https://fonts.googleapis.com/css?family=Great+Vibes|Cinzel' rel='stylesheet' type='text/css'>
@@ -20,13 +20,10 @@
     ga('send', 'pageview');
   </script>
 </head>
-<body class="loading"><div style="overflow:hidden">
-
-
-<div id="loading-overlay">
-  <img src="./images/loading.gif" alt="" />
-  <!-- <span>Loading.......</span> -->
-</div>
+<body class="loading">
+  <div id="loading-overlay">
+    <img src="./images/loading.gif" alt="" />
+  </div>
 <div id="header-container">
   <h1 id="main-title">Tatiana & Konrad</h1>
   <h2 id="date">October 1st 2016</h2>
@@ -36,7 +33,7 @@
         <li class="section">Events</li>
         <li class="section">Travel</li>
         <li class="section">Accomodations</li>
-        <li class="section">Live</li>
+        <li class="section">Registry</li>
         <li id="contact" class="section">Contact<ul id="contact-drop" class="closed"><li>Contact Konrad</li><li>Contact Tatiana</li></ul></li>
       </ul>
   </div>
@@ -49,32 +46,32 @@
     <!-- <img src="./images/slideshow/File_24.jpeg"> -->
     <div id="window-slider">
             <div id="tl-slider">
-              <img class="no-top" src="./images/slideshow/File_1.jpeg">
-              <img class="no-top" src="./images/slideshow/File_7.jpeg">
+              <img src="./images/slideshow/File_1.jpeg">
+              <img src="./images/slideshow/File_7.jpeg">
               <img src="./images/slideshow/File_3.jpeg">
               <img src="./images/slideshow/File_4.jpeg">
               <img src="./images/slideshow/File_5.jpeg">
               <img src="./images/slideshow/File_6.jpeg">
             </div>
             <div id="tr-slider">
-              <img class="no-top" src="./images/slideshow/File_8.jpeg">
-              <img class="no-top" src="./images/slideshow/File_11.jpeg">
+              <img src="./images/slideshow/File_8.jpeg">
+              <img src="./images/slideshow/File_11.jpeg">
               <img src="./images/slideshow/File_9.jpeg">
               <img src="./images/slideshow/File_12.jpeg">
               <img src="./images/slideshow/File_13.jpeg">
               <img src="./images/slideshow/File_0.jpeg">
             </div>
             <div id="bl-slider">
-              <img class="no-top" src="./images/slideshow/File_15.jpeg">
-              <img class="no-top" src="./images/slideshow/File_14.jpeg">
+              <img src="./images/slideshow/File_15.jpeg">
+              <img src="./images/slideshow/File_14.jpeg">
               <img src="./images/slideshow/File_16.jpeg">
               <img src="./images/slideshow/File_17.jpeg">
               <img src="./images/slideshow/File_18.jpeg">
               <img src="./images/slideshow/File_19.jpeg">
             </div>
             <div id="br-slider">
-              <img class="no-top" src="./images/slideshow/File_20.jpeg">
-              <img class="no-top" src="./images/slideshow/File_2.jpeg">
+              <img src="./images/slideshow/File_20.jpeg">
+              <img src="./images/slideshow/File_2.jpeg">
               <img src="./images/slideshow/File_21.jpeg">
               <img src="./images/slideshow/File_22.jpeg">
               <img src="./images/slideshow/File_23.jpeg">
@@ -86,44 +83,114 @@
 </section>
 
 <section id="Travel" class="main start">
+
   <div class="center-container">
     <!-- <div class="shadow"><img class="main-photo" width="500" src="./images/reception1.JPG"/></div> -->
-    <!-- <a href="https://www.hamptonjitney.com">
-      <img id="jitney" src="https://www.hamptonjitney.com/art/body-images/header_new.jpg" alt="Hampton Jitney" width="1050" height="162" align="center" border="0">
+    <a href="https://www.hamptonjitney.com">
+      <img id="jitney" src="./images/travel/jitney.jpg" alt="Hampton Jitney" width="1050" height="162" align="center" border="0">
     </a>
     <a href="http://www.macarthurairport.com/">
-      <img id="macaruthur" src="http://www.macarthurairport.com/images/banners/mainMaclogo1.png" alt="" />
+      <img id="macaruthur" src="./images/travel/airport.png" alt="" />
     </a>
-    <a href="http://lirr42.mta.info/stationInfo.php?id=82">
-      <img style="background-color:white" id="lirr" width="910" src="https://upload.wikimedia.org/wikipedia/en/thumb/6/61/LIRR_logo.svg/1280px-LIRR_logo.svg.png" alt="" />
-    </a> -->
+    <a href="http://lirr42.mta.info/stationInfo.php?id=75">
+      <img style="background-color:white" id="lirr" width="910" src="./images/travel/LIRR_logo.png" alt="" />
+    </a>
 
-  <!-- http://lirr42.mta.info/stationInfo.php?id=82 -->
 
   </div>
 </section>
+
+
+<!--
+tatiana
+tatiana
+tatiana
+tatiana
+tatiana
+tatiana
+tatiana
+-->
 
 
 <section id="Events" class="main start">
-  <div class="google-container center-container">
-    <div class="text-1 google-text">FERRY</div>
-    <div class="text-2 google-text">CEREMONY</div>
-    <div class="text-3 google-text">RECEPTION</div>
-    <div class="text-4 google-text">AFTER PARTY</div>
+  <div id="events-container" class="center-container">
+    <h2 id="date-header">SATURDAY OCT 1, 2016</h2>
 
-    <div class="google1 google">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1458083440351!6m8!1m7!1suJshvDR4TgHCLicA80GntQ!2m2!1d41.10014504866984!2d-72.36209736453158!3f47.48081307359158!4f-1.0667886429585565!5f0.7820865974627469" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-    <div class="google2 google">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1459618602591!6m8!1m7!1sQRkuIdiWhGEM3K4cBgXh6Q!2m2!1d41.08305230011187!2d-72.35798366429174!3f248.0778353468426!4f2.7312102765565527!5f0.7820865974627469" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-    <div class="google3 google">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1458085195297!6m8!1m7!1sBV1GtPX3sqIjcV_5o5hNhg!2m2!1d41.09558330236595!2d-72.36371884315743!3f359.034286282375!4f0.5245903861420658!5f0.7820865974627469" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
-    <div class="google4 google">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1459619078352!6m8!1m7!1sRtSDcYUmCnci5VNCoJlVmw!2m2!1d41.10233988650143!2d-72.3599424523227!3f31.432603092929256!4f2.655099915462813!5f2.9459200343840775" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+    <div class="events-event clear-fix">
+      <div class="event-type">SHUTTLE FROM HOLTSVILLE </div>
+      <span class="event-time"> Leaving Holtsville: 1 PM / 5:15 PM, Leaving Greenport: 9:30 PM / 11:30 PM  </span>
+      <div class="google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1465484298386!6m8!1m7!1sE-clVsp7THQxFEUmsQKcsw!2m2!1d40.8223743!2d-73.0210742!3f215.7990250117479!4f-1.012116494957425!5f2.047580610846991" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+      <p class="event-text">
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+      </p>
+
+    </div>
+
+    <div class="events-event clear-fix">
+      <div class="event-type">FERRY TO SHELTER ISLAND </div>
+      <span class="event-time">2 PM</span>
+      <div class="google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1458083440351!6m8!1m7!1suJshvDR4TgHCLicA80GntQ!2m2!1d41.10014504866984!2d-72.36209736453158!3f47.48081307359158!4f-1.0667886429585565!5f0.7820865974627469" width="400" height="300" frameborder="0" style="border:0" allowfullscreen=""></iframe></div>
+      <p class="event-text">
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+      </p>
+
+    </div>
+    <div class="events-event clear-fix">
+      <div class="event-type">CEREMONY </div>
+      <span class="event-time">2:30 PM</span>
+      <div class="google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1459618602591!6m8!1m7!1sQRkuIdiWhGEM3K4cBgXh6Q!2m2!1d41.08305230011187!2d-72.35798366429174!3f248.0778353468426!4f2.7312102765565527!5f0.7820865974627469" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+      <p class="event-text">
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+      </p>
+    </div>
+    <div class="events-event clear-fix">
+      <div class="event-type">RECEPTION & COCKTAIL HOUR </div>
+      <span class="event-time">Reception 5:30 PM, Cocktail Hour 4:30 PM </span>
+      <div class="google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1458085195297!6m8!1m7!1sBV1GtPX3sqIjcV_5o5hNhg!2m2!1d41.09558330236595!2d-72.36371884315743!3f359.034286282375!4f0.5245903861420658!5f0.7820865974627469" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+      <p class="event-text">
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+      </p>
+
+    </div>
+    <div class="events-event clear-fix">
+      <div class="event-type">AFTER PARTY</div>
+      <span class="event-time"> 11 PM till ... </span>
+      <div class="google-map"><iframe src="https://www.google.com/maps/embed?pb=!1m0!3m2!1sen!2sus!4v1459619078352!6m8!1m7!1sRtSDcYUmCnci5VNCoJlVmw!2m2!1d41.10233988650143!2d-72.3599424523227!3f31.432603092929256!4f2.655099915462813!5f2.9459200343840775" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe></div>
+      <p class="event-text">
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+        text goes here  text goes here
+      </p>
+    </div>
   </div>
-
-
-
 </section>
+
+
+
+
+
+
+
+
 
 <section id="Accomodations" class="main start">
   <div id="lodging-container" class="center-container">
@@ -131,14 +198,14 @@
     <div class="sqs-block-content"><h1>Greenport Lodging</h1>
       <p><em>
         We really hoped to have everything closeby, unfortunatly we weren't able to block any rooms near Greenport.
-        There are however many small hotels, motels and B&amp;B's around for individual accomodations. 
+        There are however many small hotels, motels and B&amp;B's around for individual accomodations.
         They are often NOT found on priceline/hotels.com.
      </em></p>
     </div>
   </div>
     <br>
     <p><em>
-      If you are planning on staying in Greenport, we recomend also looking into <a href="https://www.airbnb.com/s/Greenport--NY--United-States?guests=&checkin=10%2F01%2F2016&checkout=10%2F02%2F2016&ss_id=dbdxzi5e&source=bb&s_tag=myTUHdqh">AirB&amp;B</a>.<br>
+      If you are planning on staying in Greenport, we recomend also looking into <a href="https://www.vrbo.com/vacation-rentals/usa/new-york/long-island/north-fork/greenport?from-date=2016-10-01&to-date=2016-10-02">VRBO</a> and <a href="https://www.airbnb.com/s/Greenport--NY--United-States?guests=&checkin=10%2F01%2F2016&checkout=10%2F02%2F2016&ss_id=dbdxzi5e&source=bb&s_tag=myTUHdqh">AirBnB</a>.<br>
       If you prefer traditional accomodatins here are some great places that are conviently located near the reception.
       <br>
       Some may require two night minimum stays. Many offer off-season rates, but the timing of the off-season varies from one establishment to another.
@@ -237,9 +304,14 @@
   http://www.greenportonline.com/
 </section>
 
-<section id="Live" class="main start">
-  <div class="scrbbl-embed" data-src="/board/1824397/31550"></div>
-  <script>(function(d, s, id) {var js,ijs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//embed.scribblelive.com/widgets/embed.js";ijs.parentNode.insertBefore(js, ijs);}(document, 'script', 'scrbbl-js'));</script>
+<section id="Registry" class="main start">
+
+  <a class="zola-registry-embed" href="https://www.zola.com/registry/tatianaandkonrad" data-registry-key="tatianaandkonrad">Our Zola Wedding Registry</a>
+  <script>!function(e,t,n){var s,a=e.getElementsByTagName(t)[0];e.getElementById(n)||(s=e.createElement(t),s.id=n,s.async=!0,s.src="https://widget.zola.com/js/widget.js",a.parentNode.insertBefore(s,a))}(document,"script","zola-wjs");</script>
+
+  <!-- <div class="scrbbl-embed" data-src="/board/1824397/31550"></div> -->
+  <!-- <script>(function(d, s, id) {var js,ijs=d.getElementsByTagName(s)[0];if(d.getElementById(id))return;js=d.createElement(s);js.id=id;js.src="//embed.scribblelive.com/widgets/embed.js";ijs.parentNode.insertBefore(js, ijs);}(document, 'script', 'scrbbl-js'));</script> -->
+  <br>
 </section>
 
 
@@ -268,11 +340,10 @@
   </form>
 </section>
 
-</div></body>
+</body>
 
 
 <script>
-
 $(document).on("ready", function(){
   $('#window-slider').windowSlider();
   $('.basic-grey').on('click','#send-button',function(){
@@ -322,7 +393,6 @@ $(document).on("ready", function(){
       $contact.find('#name').val("");
       $contact.find('#number').val("");
       $contact.find('#message').val("");
-
     }
   })
   $('#contact').on('mouseover', function(){
@@ -336,6 +406,13 @@ $(document).on("ready", function(){
     $(this).text("October 1st 2016");
   })
   $(window).on("load", function() {
+    $(window).scroll(function(event){
+        if($(this).scrollTop() <=60){
+          $('#header-container').removeClass('minimized');
+        }else{
+          $('#header-container').addClass('minimized');
+        }
+    });
     setTimeout(function(){
       $(".start").addClass('hide');
       $("#loading-overlay").addClass('loaded');

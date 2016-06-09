@@ -12,21 +12,19 @@ body, p, h1, h2, li{
 ul{
   padding: 0;
   list-style:none;
+  margin:0;
 }
 
 body{
   font-size:14px !important;
   font-family: 'Cinzel', serif;
   background-image: url("../images/wood.jpg");
+  background-attachment:fixed;
   overflow-x: hidden;
   margin: auto;
   width: 1200px;
 }
-body.loading{
-  height: 100%;
-  width: 100%;
-  overflow:hidden;
-}
+
 section{
   width:1200px;
   margin:auto;
@@ -42,14 +40,16 @@ section{
 }
 .main{
   position:relative;
+  padding-top: 260px;
 }
 #loading-overlay{
   background: rgb(50, 98, 149);
-  position: absolute;
-  width: 2000px;
-  height: 2000px;
-  z-index: 10;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
   opacity:1;
+  left:0;
 }
 #loading-overlay >img{
   font-size: 48px;
@@ -63,7 +63,6 @@ section{
   width:0%;
   height:0%;
   opacity: 0;
-  transition: 2s;
   transition: opacity 2s ease 1s, width 3s ease-in, height 3s ease-in;
 }
 
@@ -73,13 +72,21 @@ section{
 }
 
 #header-container{
-  background-color:rgba(50, 98, 149, 0.5);
+  background-color:rgba(50, 98, 149, 0.6);
   padding-top: 15px;
   color:white;
   width: 1200px;
-  border-bottom: 31px solid transparent;
-  margin-bottom: 30px;
+  border-bottom: 30px solid transparent;
+  position:fixed;
+  z-index:10;
+  transition: margin .5s, border .5s, background-color .5s;
 }
+#header-container.minimized{
+  margin-top: -162px;
+  background-color:rgba(50, 98, 149, .9);
+  border-bottom: 0px solid transparent;
+}
+
 #header-container > h1{
   font-size: 60px;
   font-weight: bold;
@@ -97,7 +104,7 @@ section{
   margin: auto
 }
 #header-options{
-  margin-top: 10px;
+  margin-top: 15px;
   border: 1px solid white;
   display: inline-block;
 }
@@ -208,7 +215,7 @@ section{
   position: relative;
 }
 
-.google-container{position:relative; width:100%; height:1500px}
+/*.google-container{position:relative; width:100%; height:1500px}
 .google{position:absolute}
 .google-text{position:absolute; font-size: 40px;transition: .5s;}
 .google1{left:150px;top:0px;color:white;}
@@ -218,8 +225,45 @@ section{
 .text-1{left:650px;top:100px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
 .text-2{left:200px;top:450px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
 .text-3{left:650px;top:800px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
-.text-4{left:200px;top:1150px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}
+.text-4{left:200px;top:1150px;border-radius: 5px;color:rgba(255,255,255,.8);padding:20px 30px;text-shadow: 4px 3px 0px rgba(0,0,0,0.55), 9px 8px 0px rgba(0,0,0,0.15);}*/
 
+/*Events*/
+#events-container{
+  background-color: rgba(255,255,255,.9);
+  color: rgb(74, 74, 74);
+  font-family: "proxima-nova";
+}
+#date-header{
+  color: #3d9991;
+  font-weight: bold;
+  font-size: 38px;
+  letter-spacing: 5px;
+  font-style: italic;
+  border-bottom: 1px solid black;
+}
+.events-event{
+  margin-top: 25px;
+  padding:10px;
+}
+.event-type{
+  font-size: 23px;
+  font-weight: bold;
+}
+.event-time{
+  font-size: 20px;
+  padding: 5px;
+  display: block;
+}
+.google-map{
+  float: left;
+  margin: 10px;
+  margin-right: 25px;
+}
+.event-text{
+  margin: 20px;
+  font-size: 19px;
+}
+/*Events End*/
 /*Accomodations*/
   #lodging-container{
     background-color: rgba(255,255,255,.9);
@@ -296,7 +340,6 @@ section{
 #lodging-container h1, .entry-title {
     font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 48px;
-    font-family: "adobe-garamond-pro";
     font-size: 45px;
     line-height: 1.2em;
     text-transform: none;
