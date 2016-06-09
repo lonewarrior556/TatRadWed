@@ -408,9 +408,12 @@ $(document).on("ready", function(){
   $(window).on("load", function() {
     $(window).scroll(function(event){
         if($(this).scrollTop() <=60){
-          $('#header-container').removeClass('minimized');
+          $('#header-container').removeClass('fullhide').removeClass('minimized');
+        }
+        else if($(this).scrollTop() <=300){
+          $('#header-container').removeClass('fullhide').addClass('minimized');
         }else{
-          $('#header-container').addClass('minimized');
+          $('#header-container').addClass('fullhide');
         }
     });
     setTimeout(function(){

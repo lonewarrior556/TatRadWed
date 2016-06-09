@@ -86,6 +86,9 @@ section{
   background-color:rgba(50, 98, 149, .9);
   border-bottom: 0px solid transparent;
 }
+#header-container.fullhide{
+  margin-top: -500px !important;
+}
 
 #header-container > h1{
   font-size: 60px;
