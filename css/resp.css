@@ -14,7 +14,7 @@
   }
 }
 
-@media (max-width: 600px){
+@media (max-device-width: 601px){
   #header-options > li {
     width:95%;
     border:0;
