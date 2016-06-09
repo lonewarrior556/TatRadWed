@@ -13,3 +13,13 @@
     left: 400px;
   }
 }
+
+@media(max-width: 500px){
+  #header-options > li {
+    width:95%;
+    border:0;
+  }
+  .main{
+    padding-top: 375px;
+  }
+}
