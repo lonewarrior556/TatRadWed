@@ -363,10 +363,13 @@ section{
 }
 /*Accomodations-end*/
 
-/*Trevel*/
+/*Travel*/
+#travel-container{
+  background-color: rgba(255,255,255,.9);
+  color: rgb(74, 74, 74);
+  font-family: "proxima-nova";
+}
 #jitney {
-  width: 1050px;
-  height: 162px;
   vertical-align: middle;
   border-top-width: 0px;
   border-right-width: 0px;
