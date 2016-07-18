@@ -235,15 +235,17 @@ section{
 #events-container{
   background-color: rgba(255,255,255,.9);
   color: rgb(74, 74, 74);
-  font-family: "proxima-nova";
+  font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 #date-header{
+  font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
   color: #3d9991;
   font-weight: bold;
-  font-size: 38px;
-  letter-spacing: 5px;
-  font-style: italic;
-  border-bottom: 1px solid black;
+  font-size: 42px;
+  margin-top:15px;
+  /*letter-spacing: 5px;*/
+  /*font-style: italic;*/
+  /*border-bottom: 1px solid black;*/
 }
 .events-event{
   margin-top: 25px;
@@ -319,7 +321,7 @@ section{
       color: #4a4a4a;
   }
   #lodging-container h2 {
-      font-family: "proxima-nova";
+      font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
       font-size: 22px;
       line-height: 1.2em;
       text-transform: uppercase;
@@ -367,7 +369,7 @@ section{
 #travel-container{
   background-color: rgba(255,255,255,.9);
   color: rgb(74, 74, 74);
-  font-family: "proxima-nova";
+  font-family: "proxima-nova","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 #jitney {
   vertical-align: middle;
